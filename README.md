@@ -1,0 +1,1 @@
+A text-based adventure game for a school project
