@@ -1,0 +1,41 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1709767025
+icon.svg::CompressedTexture2D::8249361813422529651::1709764754::1709764856::1::::<><>::
+node_2d.tscn::PackedScene::3267400336536402930::1709765070::0::1::::<><>::
+player.cs::CSharpScript::-1::1709765233::0::1::::<>Node<>::
+README.md::TextFile::-1::1709767003::0::1::::<><>::
+::res://addons/::1709765333
+::res://addons/godot-git-plugin/::1709765333
+git_plugin.gdextension::GDExtension::-1::1702859748::0::1::::<><>::
+plugin.cfg::TextFile::-1::1702859748::0::1::::<><>::
+THIRDPARTY.md::TextFile::-1::1702859748::0::1::::<><>::
+::res://addons/godot-git-plugin/linux/::1702859748
+::res://addons/godot-git-plugin/macos/::1709766094
+::res://addons/godot-git-plugin/win64/::1702859748
+::res://godot-git-plugin-v3.1.0/::1709766426
+::res://godot-git-plugin-v3.1.0/addons/::1709766426
+::res://godot-git-plugin-v3.1.0/addons/godot-git-plugin/::1702859748
+git_plugin.gdextension::GDExtension::-1::1702859748::0::1::::<><>::
+plugin.cfg::TextFile::-1::1702859748::0::1::::<><>::
+THIRDPARTY.md::TextFile::-1::1702859748::0::1::::<><>::
+::res://godot-git-plugin-v3.1.0/addons/godot-git-plugin/linux/::1702859748
+::res://godot-git-plugin-v3.1.0/addons/godot-git-plugin/macos/::1709766275
+::res://godot-git-plugin-v3.1.0/addons/godot-git-plugin/win64/::1702859748
+::res://godot-git-plugin-v3.1.0 2/::1709766426
+::res://godot-git-plugin-v3.1.0 2/addons/::1702859748
+::res://godot-git-plugin-v3.1.0 2/addons/godot-git-plugin/::1702859748
+git_plugin.gdextension::GDExtension::-1::1702859748::0::1::::<><>::
+plugin.cfg::TextFile::-1::1702859748::0::1::::<><>::
+THIRDPARTY.md::TextFile::-1::1702859748::0::1::::<><>::
+::res://godot-git-plugin-v3.1.0 2/addons/godot-git-plugin/linux/::1702859748
+::res://godot-git-plugin-v3.1.0 2/addons/godot-git-plugin/macos/::1709766463
+::res://godot-git-plugin-v3.1.0 2/addons/godot-git-plugin/win64/::1702859748
+::res://godot-git-plugin-v3.1.0 3/::1709766432
+::res://godot-git-plugin-v3.1.0 3/addons/::1702859748
+::res://godot-git-plugin-v3.1.0 3/addons/godot-git-plugin/::1702859748
+git_plugin.gdextension::GDExtension::-1::1702859748::0::1::::<><>::
+plugin.cfg::TextFile::-1::1702859748::0::1::::<><>::
+THIRDPARTY.md::TextFile::-1::1702859748::0::1::::<><>::
+::res://godot-git-plugin-v3.1.0 3/addons/godot-git-plugin/linux/::1702859748
+::res://godot-git-plugin-v3.1.0 3/addons/godot-git-plugin/macos/::1709766465
+::res://godot-git-plugin-v3.1.0 3/addons/godot-git-plugin/win64/::1702859748
