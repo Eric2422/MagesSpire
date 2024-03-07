@@ -1,2 +1,2 @@
-﻿56986
-C:/Users/eric/Downloads/Godot_v4.2.1-stable_mono_win64/Godot_v4.2.1-stable_mono_win64.exe
+﻿51857
+/Applications/Godot_mono.app/Contents/MacOS/Godot
