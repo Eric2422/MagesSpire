@@ -3,4 +3,3 @@ It is centered around an apprentice mage being tested by their master. The setti
 The first puzzle has the player open a locked door, which the player can not break. To unlock it, the player must retrieve two hidden keys. 
 The second puzzle is hitting a target in a dark room. The darkness hides a switch, so the player has to illuminate the place to find it. When the switch is flipped, a target will show. Once the player hits the target, the next room opens.
 The final challenge is defeating a straw dummy enchanted by the apprentice’s master. It is stationary and only throws balls of straw. 
-
