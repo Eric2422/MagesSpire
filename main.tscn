@@ -28,6 +28,7 @@ sources/0 = SubResource("TileSetAtlasSource_acw8m")
 metadata/_edit_horizontal_guides_ = [336.0]
 
 [node name="background" type="TileMap" parent="."]
+z_index = -1
 texture_filter = 1
 tile_set = SubResource("TileSet_e6khf")
 format = 2
