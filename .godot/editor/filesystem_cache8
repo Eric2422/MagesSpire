@@ -1,15 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-<<<<<<< HEAD
-::res://::1710002827
-icon.svg::CompressedTexture2D::8249361813422529651::1709769764::1709769764::1::::<><>::
-player.cs::CSharpScript::-1::1709861639::0::1::::<>Node<>::
-player.tscn::PackedScene::3267400336536402930::1709861639::0::1::::<><>::
-README.md::TextFile::-1::1709774388::0::1::::<><>::
-=======
-::res://::1709923439
-icon.svg::CompressedTexture2D::8249361813422529651::1709764754::1709764856::1::::<><>::
-player.cs::CSharpScript::-1::1709908896::0::1::::<>Node<>::
-README.md::TextFile::-1::1709908896::0::1::::<><>::
-main.tscn::PackedScene::312124452955383248::1709923425::0::1::::<><>::
-tower_wall.png::CompressedTexture2D::7232876551650735012::1709925950::1709925952::1::::<><>::
->>>>>>> 8e5c53d71deccff6d2324c46a92675f9d608364b
+::res://::1710183214
+foreground_wall.png::CompressedTexture2D::2164894311502951581::1710183214::1710183217::1::::<><>::
+icon.svg::CompressedTexture2D::8249361813422529651::1710166879::1710166879::1::::<><>::
+main.tscn::PackedScene::312124452955383248::1710183052::0::1::::<><>::uid://8jsact5iitib::::res://textures/wall_tile.png
+player.cs::CSharpScript::-1::1710166879::0::1::::<>Node<>::
+README.md::TextFile::-1::1710166879::0::1::::<><>::
+wall_tile.png::CompressedTexture2D::5856137100801828081::1710175305::1710175364::1::::<><>::
+::res://textures/::1710175052
+foreground_wall.png::CompressedTexture2D::561890858452079654::1710174961::1710175052::1::::<><>::
+wall_tile.png::CompressedTexture2D::2335904281483477277::1710174713::1710175048::1::::<><>::
