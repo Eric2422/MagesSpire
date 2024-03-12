@@ -1,7 +1,8 @@
+CollisionShape2D
+TileMap
 Sprite2D
 CharacterBody2D
 AnimatedSprite2D
-TileMap
 ParallaxBackground
 TextureRect
 Node2D
