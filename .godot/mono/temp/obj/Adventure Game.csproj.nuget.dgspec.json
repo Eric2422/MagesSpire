@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/eric/adventureGame/Adventure Game.csproj": {}
+    "C:\\Users\\eric\\adventureGame\\Adventure Game.csproj": {}
   },
   "projects": {
-    "/Users/eric/adventureGame/Adventure Game.csproj": {
+    "C:\\Users\\eric\\adventureGame\\Adventure Game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/eric/adventureGame/Adventure Game.csproj",
+        "projectUniqueName": "C:\\Users\\eric\\adventureGame\\Adventure Game.csproj",
         "projectName": "Adventure Game",
-        "projectPath": "/Users/eric/adventureGame/Adventure Game.csproj",
-        "packagesPath": "/Users/eric/.nuget/packages/",
-        "outputPath": "/Users/eric/adventureGame/.godot/mono/temp/obj/",
+        "projectPath": "C:\\Users\\eric\\adventureGame\\Adventure Game.csproj",
+        "packagesPath": "C:\\Users\\eric\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\eric\\adventureGame\\.godot\\mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/eric/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\eric\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -75,6 +75,10 @@
             {
               "name": "Microsoft.NETCore.App.Ref",
               "version": "[6.0.27, 6.0.27]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.27, 6.0.27]"
             }
           ],
           "frameworkReferences": {
@@ -82,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
