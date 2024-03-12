@@ -1,6 +1,7 @@
+Sprite2D
+CharacterBody2D
 AnimatedSprite2D
 TileMap
-Sprite2D
 ParallaxBackground
 TextureRect
 Node2D
