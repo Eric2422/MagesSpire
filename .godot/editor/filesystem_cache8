@@ -1,10 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1710251210
+::res://::1710266107
 icon.svg::CompressedTexture2D::8249361813422529651::1710166879::1710166879::1::::<><>::
-main.tscn::PackedScene::312124452955383248::1710251210::0::1::::<><>::uid://cpo0ytfqps1cf::::res://textures/background_tile.png<>uid://53xq06qjndrx::::res://textures/ground_tiles.png
-player.cs::CSharpScript::-1::1710183369::0::1::::<>Node<>::
+main.tscn::PackedScene::312124452955383248::1710347734::0::1::::<><>::uid://cpo0ytfqps1cf::::res://textures/background_tile.png<>uid://53xq06qjndrx::::res://textures/ground_tiles.png<>uid://dvqe4ujklx4ir::::res://player.tscn<>res://player.cs
+player.cs::CSharpScript::-1::1710347734::0::1::::<>Node<>::
+player.tscn::PackedScene::8666553532377481853::1710261893::0::1::::<><>::uid://wgci60ww86p4::::res://textures/player.png
 README.md::TextFile::-1::1710166879::0::1::::<><>::
-::res://textures/::1710261123
+::res://textures/::1710261691
 background_tile.png::CompressedTexture2D::5856137100801828081::1710249751::1710249756::1::::<><>::
 ground_tiles.png::CompressedTexture2D::2164894311502951581::1710249868::1710249925::1::::<><>::
 player.png::CompressedTexture2D::1556678214772120191::1710261680::1710261691::1::::<><>::
