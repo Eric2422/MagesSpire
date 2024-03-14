@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZhP45URbqJvir1h2a2CYv0iuOPTcCakY/kIUCUd7R8x0hoLveFGcD6aWxuyHwqKOn35e0Ak0aVGTdc+GVF+I8Q==",
+  "dgSpecHash": "JjOI3RIoTKJwlp+y0C/HSDMIufSfP51BOVWbDDbxwwzXxyBwGonTje0UJnxi75KgIgJdPc3UMiywxrX7K7BaRw==",
   "success": true,
-  "projectFilePath": "/Users/eric/adventureGame/Adventure Game.csproj",
+  "projectFilePath": "/Users/eric/magesSpire/Adventure Game.csproj",
   "expectedPackageFiles": [
     "/Users/eric/.nuget/packages/godot.sourcegenerators/4.2.1/godot.sourcegenerators.4.2.1.nupkg.sha512",
     "/Users/eric/.nuget/packages/godotsharp/4.2.1/godotsharp.4.2.1.nupkg.sha512",

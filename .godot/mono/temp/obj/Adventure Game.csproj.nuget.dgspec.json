@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/eric/adventureGame/Adventure Game.csproj": {}
+    "/Users/eric/magesSpire/Adventure Game.csproj": {}
   },
   "projects": {
-    "/Users/eric/adventureGame/Adventure Game.csproj": {
+    "/Users/eric/magesSpire/Adventure Game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/eric/adventureGame/Adventure Game.csproj",
+        "projectUniqueName": "/Users/eric/magesSpire/Adventure Game.csproj",
         "projectName": "Adventure Game",
-        "projectPath": "/Users/eric/adventureGame/Adventure Game.csproj",
+        "projectPath": "/Users/eric/magesSpire/Adventure Game.csproj",
         "packagesPath": "/Users/eric/.nuget/packages/",
-        "outputPath": "/Users/eric/adventureGame/.godot/mono/temp/obj/",
+        "outputPath": "/Users/eric/magesSpire/.godot/mono/temp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/eric/.nuget/NuGet/NuGet.Config"
