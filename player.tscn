@@ -14,7 +14,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v2uwf"]
-size = Vector2(21, 41)
+size = Vector2(26, 60)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 
@@ -23,9 +23,9 @@ z_as_relative = false
 texture_filter = 1
 position = Vector2(53, 35)
 sprite_frames = SubResource("SpriteFrames_q7o0f")
-flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_as_relative = false
-position = Vector2(52.5, 33.5)
+texture_filter = 1
+position = Vector2(53, 37)
 shape = SubResource("RectangleShape2D_v2uwf")
