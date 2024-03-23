@@ -1,4 +1,4 @@
-res://main.tscn
-res://player.tscn
-res://src/Door.cs
 res://interaction_area.tscn
+res://main.tscn
+res://interact_area.tscn
+res://door.tscn

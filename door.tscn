@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgy70f424cc05"]
+
+[ext_resource type="Texture2D" uid="uid://0twfkwvmyfbj" path="res://assets/door.png" id="1_wr4uw"]
+
+[node name="Door" type="Sprite2D"]
+texture = ExtResource("1_wr4uw")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

@@ -26,7 +26,7 @@ public partial class Player : CharacterBody2D
 			velocity.Y += gravity * (float) delta;
 		}
 
-		// Handle Jump.
+		// Handle Jump
 		if (Input.IsActionJustPressed("ui_up") && IsOnFloor())
 		{
 			velocity.Y = JumpVelocity;
