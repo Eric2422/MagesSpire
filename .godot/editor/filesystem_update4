@@ -1,4 +1,8 @@
-res://interaction_area.tscn
-res://main.tscn
-res://interact_area.tscn
+res://entrance.tscn
+res://src/Entrance.cs
 res://door.tscn
+res://player.tscn
+res://hallway.tscn
+res://src/Door.cs
+res://src/Player.cs
+res://src/Hallway.cs

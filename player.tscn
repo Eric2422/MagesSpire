@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dvqe4ujklx4ir"]
 
-[ext_resource type="Texture2D" uid="uid://wgci60ww86p4" path="res://assets/player.png" id="1_17i56"]
+[ext_resource type="Texture2D" uid="uid://wgci60ww86p4" path="res://assets/player/player.png" id="1_17i56"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q7o0f"]
 animations = [{
@@ -13,21 +13,20 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g42p5"]
-radius = 14.0
-height = 64.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6v8qa"]
+radius = 13.0
+height = 60.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-collision_layer = 2
+collision_mask = 3
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 z_as_relative = false
 texture_filter = 1
-position = Vector2(53, 35)
 sprite_frames = SubResource("SpriteFrames_q7o0f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_as_relative = false
 texture_filter = 1
-position = Vector2(52, 37)
-shape = SubResource("CapsuleShape2D_g42p5")
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_6v8qa")
