@@ -3,3 +3,7 @@ res://src/Entrance.cs
 res://src/Hallway.cs
 res://src/Player.cs
 res://src/SceneManager.cs
+res://scenes/entrance.tscn
+res://scenes/player.tscn
+res://scenes/door.tscn
+res://src/Scene.cs

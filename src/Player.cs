@@ -1,56 +1,54 @@
 using Godot;
-using System;
-using System.Collections.Generic;
 
 public partial class Player : CharacterBody2D
 {
-    public const float Speed = 160.0f;
-    public const float JumpVelocity = -400.0f;
+	public const float Speed = 160.0f;
+	const float JumpVelocity = -400.0f;
 
-    // Get the gravity from the project setqtings to be synced with RigidBody nodes.
-    public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
+	// Get the gravity from the project setqtings to be synced with RigidBody nodes.
+	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 
-    private AnimatedSprite2D _playerSprite;
+	private AnimatedSprite2D playerSprite;
 
-    public override void _Ready()
-    {
-        _playerSprite = GetNode<AnimatedSprite2D>("PlayerSprite");
-    }
+	public override void _Ready()
+	{
+		playerSprite = GetNode<AnimatedSprite2D>("PlayerSprite");
+	}
 
-    public override void _PhysicsProcess(double delta)
-    {
-        Vector2 velocity = Velocity;
+	public override void _PhysicsProcess(double delta)
+	{
+		Vector2 velocity = Velocity;
 
-        // Add the gravity.
-        if (!IsOnFloor())
-        {
-            velocity.Y += gravity * (float)delta;
-        }
+		// Add the gravity.
+		if (!IsOnFloor())
+		{
+			velocity.Y += gravity * (float)delta;
+		}
 
-        // Handle Jump
-        if (Input.IsActionJustPressed("ui_up") && IsOnFloor())
-        {
-            velocity.Y = JumpVelocity;
-        }
+		// Handle Jump.
+		if (Input.IsActionJustPressed("ui_up") && IsOnFloor())
+		{
+			velocity.Y = JumpVelocity;
+		}
 
-        // Get the input direction
-        float direction = Input.GetAxis("ui_left", "ui_right");
+		// Get the input direction
+		float direction = Input.GetAxis("ui_left", "ui_right");
 
-        // If either left or right are pressed, accelerate the player
-        if (direction != 0)
-        {
-            velocity.X = Mathf.MoveToward(Velocity.X, direction * Speed, 8);
+		// If either left or right are pressed, accelerate the player.
+		if (direction != 0)
+		{
+			velocity.X = Mathf.MoveToward(Velocity.X, direction * Speed, 8);
 
-            // Reflect the sprite to face the direction player is moving
-            _playerSprite.FlipH = direction != 1.0f;
-        }
-        // Deccelerate the player
-        else
-        {
-            velocity.X = Mathf.MoveToward(Velocity.X, 0, 8);
-        }
+			// Reflect the sprite to face the direction player is moving.
+			playerSprite.FlipH = direction != 1.0f;
+		}
+		// Else, deccelerate the player.
+		else
+		{
+			velocity.X = Mathf.MoveToward(Velocity.X, 0, 8);
+		}
 
-        Velocity = velocity;
-        MoveAndSlide();
-    }
+		Velocity = velocity;
+		MoveAndSlide();
+	}
 }
