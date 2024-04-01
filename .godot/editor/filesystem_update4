@@ -1,8 +1,5 @@
-res://entrance.tscn
+res://scenes/hallway.tscn
 res://src/Entrance.cs
-res://door.tscn
-res://player.tscn
-res://hallway.tscn
-res://src/Door.cs
-res://src/Player.cs
 res://src/Hallway.cs
+res://src/Player.cs
+res://src/SceneManager.cs

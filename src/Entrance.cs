@@ -9,7 +9,7 @@ public partial class Entrance : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{	
-		_player = GetNode<CharacterBody2D>("PlayerBody");
+		_player = GetNode<CharacterBody2D>("Player");
 		_door = GetNode<Sprite2D>("Door");
 	}
 
@@ -24,7 +24,7 @@ public partial class Entrance : Node2D
 		// If "e" is pressed and the player is within interaction distance of the door
 		Area2D child = (Area2D) _door.FindChild("Area2D");
 		if (@event.IsActionPressed("ui_interact") && child.OverlapsBody(_player)) {
-			GetTree().ChangeSceneToFile("hallway.tscn");
+			SceneManager.changeScene("./scenes/hallway.tscn", _player);
 		}
 	}
 
