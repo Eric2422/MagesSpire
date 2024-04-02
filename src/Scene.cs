@@ -3,8 +3,13 @@ using System.Collections.Generic;
 
 public partial class Scene : Node2D
 {
-    // 
-    protected Dictionary<Scene, Vector2> Entrances = new Dictionary<Scene, Vector2>();
+    // Stores the position that the player will be in if they come from the given scene. 
+    public Dictionary<string, Vector2> entrancePositions;
+
+    public override void _Ready()
+    {
+        entrancePositions = new Dictionary<string, Vector2>();
+    }
 
     /// <summary>
     /// Called every frame.

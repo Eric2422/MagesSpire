@@ -10,17 +10,20 @@ public partial class SceneManager : Node
 	/// <param name="player">The player Node that is being used in the current scene.</param>
 	public static void ChangeScene(string nextScene, CharacterBody2D player)
 	{
-		// Save the player's old scene.
-		Node oldScene = player.GetParent();
-		oldScene.RemoveChild(player);
+		// Store the player's current scene.
+		Node currentScene = player.GetParent();
+		currentScene.RemoveChild(player);
 
 		// Load the next scene.
-		Node newScene = ResourceLoader.Load<PackedScene>(nextScene).Instantiate();
+		Scene newScene = (Scene) ResourceLoader.Load<PackedScene>(nextScene).Instantiate();
+
+        // Reposition the player to the appropriate door.
+        player.Position = newScene.entrancePositions[currentScene.Name];
 
 		newScene.AddChild(player);
-		oldScene.GetTree().Root.AddChild(newScene);
+		currentScene.GetTree().Root.AddChild(newScene);
 
 		// Remove the old scene.
-		oldScene.QueueFree();
+		currentScene.QueueFree();
 	}
 }

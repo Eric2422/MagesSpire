@@ -197,7 +197,7 @@ z_as_relative = false
 position = Vector2(110, 287)
 script = ExtResource("4_7edy2")
 
-[node name="Ground" type="TileMap" parent="."]
+[node name="Foreground" type="TileMap" parent="."]
 z_as_relative = false
 texture_filter = 1
 position = Vector2(0, -16)
