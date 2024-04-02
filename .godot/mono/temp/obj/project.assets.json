@@ -88,19 +88,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\eric\\.nuget\\packages\\": {}
+    "/Users/eric/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eric\\magesSpire\\Adventure Game.csproj",
+      "projectUniqueName": "/Users/eric/magesSpire/Adventure Game.csproj",
       "projectName": "Adventure Game",
-      "projectPath": "C:\\Users\\eric\\magesSpire\\Adventure Game.csproj",
-      "packagesPath": "C:\\Users\\eric\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\eric\\magesSpire\\.godot\\mono\\temp\\obj\\",
+      "projectPath": "/Users/eric/magesSpire/Adventure Game.csproj",
+      "packagesPath": "/Users/eric/.nuget/packages/",
+      "outputPath": "/Users/eric/magesSpire/.godot/mono/temp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\eric\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/eric/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -156,15 +156,11 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.28, 6.0.28]"
+            "version": "[6.0.27, 6.0.27]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.28, 6.0.28]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.28, 6.0.28]"
+            "version": "[6.0.27, 6.0.27]"
           }
         ],
         "frameworkReferences": {
@@ -172,7 +168,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/RuntimeIdentifierGraph.json"
       }
     }
   }

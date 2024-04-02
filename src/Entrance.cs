@@ -14,7 +14,7 @@ public partial class Entrance : Scene
 		door = GetNode<Sprite2D>("Door");
 
 		// Add the places where the player will enter
-		entrancePositions.Add("Hallway", door.Position);
+		EntrancePositions.Add("Hallway", door.Position);
 	}
 
 	public override void _Input(InputEvent @event)

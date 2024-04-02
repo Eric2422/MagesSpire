@@ -1,4 +1,5 @@
 using Godot;
+using System.Collections.Generic;
 
 public partial class SceneManager : Node
 {
@@ -17,11 +18,12 @@ public partial class SceneManager : Node
 		// Load the next scene.
 		Scene newScene = (Scene) ResourceLoader.Load<PackedScene>(nextScene).Instantiate();
 
-		// Reposition the player to the appropriate door.
-		player.Position = newScene.entrancePositions[currentScene.Name];
-
 		newScene.AddChild(player);
 		currentScene.GetTree().Root.AddChild(newScene);
+
+		// Reposition the player to the appropriate door.
+		Vector2 position = newScene.EntrancePositions[currentScene.Name];
+		player.Position = position;
 
 		// Remove the old scene.
 		currentScene.QueueFree();

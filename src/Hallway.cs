@@ -26,7 +26,7 @@ public partial class Hallway : Scene
 		foreach (string scene in enteringScenes)
 		{
 			Sprite2D door = GetNode<Sprite2D>($"{scene}Door");
-			entrancePositions.Add(scene, door.Position);
+			EntrancePositions.Add(scene, door.Position);
 		}
 	}
 }

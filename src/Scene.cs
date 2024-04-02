@@ -4,11 +4,11 @@ using System.Collections.Generic;
 public partial class Scene : Node2D
 {
     // Stores the position that the player will be in if they come from the given scene. 
-    public Dictionary<string, Vector2> entrancePositions;
+    public Dictionary<string, Vector2> EntrancePositions { get; set; }
 
     public override void _Ready()
     {
-        entrancePositions = new Dictionary<string, Vector2>();
+        EntrancePositions = new Dictionary<string, Vector2>();
     }
 
     /// <summary>
