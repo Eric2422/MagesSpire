@@ -1,18 +1,29 @@
+using System;
+using System.Runtime.InteropServices;
 using Godot;
 
 public partial class Player : CharacterBody2D
 {
-	public const float Speed = 160.0f;
-	const float JumpVelocity = -400.0f;
-
 	// Get the gravity from the project setqtings to be synced with RigidBody nodes.
-	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
+	public float Gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
+
+	// The difficulty that the player is playing on
+	public DifficultyMode Difficulty { get; set; }
+
+	// Responds to the player going through a door. 
+	[Signal]
+	public delegate void EnteredDoorEventHandler(string doorName, string roomName);
+
+	private const float Speed = 160.0f;
+	private const float JumpVelocity = -400.0f;
 
 	private AnimatedSprite2D playerSprite;
 
 	public override void _Ready()
 	{
 		playerSprite = GetNode<AnimatedSprite2D>("PlayerSprite");
+
+		EnteredDoor += HandleEnteredDoor;
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -22,7 +33,7 @@ public partial class Player : CharacterBody2D
 		// Add the gravity.
 		if (!IsOnFloor())
 		{
-			velocity.Y += gravity * (float)delta;
+			velocity.Y += Gravity * (float)delta;
 		}
 
 		// Handle Jump.
@@ -50,5 +61,23 @@ public partial class Player : CharacterBody2D
 
 		Velocity = velocity;
 		MoveAndSlide();
+	}
+
+	// Respond to the player entering a door
+	public void HandleEnteredDoor(string doorName, string roomName) {
+		// Change the scene.
+		SceneManager.ChangeScene(roomName, this);
+		
+		// Handle special door names
+		switch (doorName) 
+		{
+			case "EasyDoor":
+				Difficulty = DifficultyMode.Easy;
+				break;
+			
+			case "HardDoor":
+				Difficulty = DifficultyMode.Hard;
+				break;
+		}
 	}
 }

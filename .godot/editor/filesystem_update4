@@ -1,7 +1,4 @@
-res://scenes/hallway.tscn
 res://scenes/entrance.tscn
-res://scenes/player.tscn
-res://scenes/door.tscn
 res://src/Entrance.cs
 res://src/Hallway.cs
 res://src/Player.cs

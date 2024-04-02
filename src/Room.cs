@@ -1,10 +1,12 @@
 using Godot;
 using System.Collections.Generic;
 
-public partial class Scene : Node2D
+public partial class Room : Node2D
 {
     // Stores the position that the player will be in if they come from the given scene. 
     public Dictionary<string, Vector2> EntrancePositions { get; set; }
+
+    public Player Player { get; set; }
 
     public override void _Ready()
     {
