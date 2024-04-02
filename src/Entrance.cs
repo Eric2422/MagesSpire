@@ -8,7 +8,7 @@ public partial class Entrance : Scene
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{	
-        base._Ready();
+		base._Ready();
 
 		player = GetNode<CharacterBody2D>("Player");
 		door = GetNode<Sprite2D>("Door");
