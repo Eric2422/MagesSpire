@@ -17,8 +17,8 @@ public partial class SceneManager : Node
 		// Load the next scene.
 		Scene newScene = (Scene) ResourceLoader.Load<PackedScene>(nextScene).Instantiate();
 
-		// Reposition the player to the appropriate door.
-		player.Position = newScene.entrancePositions[currentScene.Name];
+        // Reposition the player to the appropriate door.
+        player.Position = newScene.entrancePositions[currentScene.Name];
 
 		newScene.AddChild(player);
 		currentScene.GetTree().Root.AddChild(newScene);
