@@ -10,11 +10,12 @@ public partial class Entrance : Room
 	{	
 		base._Ready();
 
-		Player = (Player) GetNode<CharacterBody2D>("Player");
-		_easyDoor = (Door) GetNode<Sprite2D>("EasyDoor");
+		Player = GetNode<Player>("Player");
+
+		_easyDoor = GetNode<Door>("EasyDoor");
 		_easyDoor.TargetRoom = "hallway";
 
-		_hardDoor = (Door) GetNode<Sprite2D>("HardDoor");
+		_hardDoor = GetNode<Door>("HardDoor");
 		_hardDoor.TargetRoom = "hallway";
 	}
 }

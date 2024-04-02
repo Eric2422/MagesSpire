@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.InteropServices;
 using Godot;
 
 public partial class Player : CharacterBody2D
@@ -10,20 +9,20 @@ public partial class Player : CharacterBody2D
 	// The difficulty that the player is playing on
 	public DifficultyMode Difficulty { get; set; }
 
-	// Responds to the player going through a door. 
-	[Signal]
-	public delegate void EnteredDoorEventHandler(string doorName, string roomName);
-
-	private const float Speed = 160.0f;
+	private const float Speed = 150.0f;
 	private const float JumpVelocity = -400.0f;
 
 	private AnimatedSprite2D playerSprite;
+
+	// Responds to the player going through a door. 
+	[Signal]
+	public delegate void EnteredDoorEventHandler(string doorName, string roomName);
 
 	public override void _Ready()
 	{
 		playerSprite = GetNode<AnimatedSprite2D>("PlayerSprite");
 
-		EnteredDoor += HandleEnteredDoor;
+		EnteredDoor += OnEnteredDoor;
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -64,17 +63,18 @@ public partial class Player : CharacterBody2D
 	}
 
 	// Respond to the player entering a door
-	public void HandleEnteredDoor(string doorName, string roomName) {
+	public void OnEnteredDoor(string doorName, string roomName)
+	{
 		// Change the scene.
 		SceneManager.ChangeScene(roomName, this);
-		
+
 		// Handle special door names
-		switch (doorName) 
+		switch (doorName)
 		{
 			case "EasyDoor":
 				Difficulty = DifficultyMode.Easy;
 				break;
-			
+
 			case "HardDoor":
 				Difficulty = DifficultyMode.Hard;
 				break;

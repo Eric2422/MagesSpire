@@ -24,13 +24,13 @@ public partial class Hallway : Room
 		// Add each into EntrancePositions
 		foreach (string scene in enteringScenes)
 		{
-			Sprite2D door = GetNode<Sprite2D>($"{scene}Door");
+			Door door = GetNode<Door>($"{scene}Door");
 			EntrancePositions.Add(scene, door.Position);
 		}
 	}
 
-    public override void _Input(InputEvent @event)
-    {
+	public override void _Input(InputEvent @event)
+	{
 		
-    }
+	}
 }

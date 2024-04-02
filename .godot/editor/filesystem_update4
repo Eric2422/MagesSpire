@@ -1,6 +1,10 @@
 res://scenes/entrance.tscn
+res://scenes/hallway.tscn
+res://scenes/door.tscn
+res://src/Door.cs
 res://src/Entrance.cs
 res://src/Hallway.cs
 res://src/Player.cs
-res://src/Scene.cs
+res://src/Room.cs
 res://src/SceneManager.cs
+res://scenes/player.tscn
