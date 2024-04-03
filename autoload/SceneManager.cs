@@ -32,6 +32,8 @@ public partial class SceneManager : Node
 		string oldSceneName = CurrentScene.Name;
 		CurrentScene.Free();
 
+		GD.Print($"sceneName: {sceneName}");
+
 		// Load a new scene.
 		var nextScene = GD.Load<PackedScene>($"res://{sceneName}/{sceneName}.tscn").Instantiate();
 		CurrentScene = nextScene;
@@ -47,6 +49,5 @@ public partial class SceneManager : Node
 
 		// Optionally, to make it compatible with the SceneTree.change_scene_to_file() API.
 		GetTree().CurrentScene = CurrentScene;
-
 	}
 }

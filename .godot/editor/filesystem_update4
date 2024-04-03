@@ -1,10 +1,11 @@
-res://entrance/entrance.tscn
 res://hallway/hallway.tscn
 res://props/door.tscn
 res://player/player.tscn
 res://props/sign.tscn
 res://library/library.tscn
+res://entrance/entrance.tscn
 res://props/bookshelf.tscn
+res://textbox.tscn
 res://autoload/Room.cs
 res://autoload/SceneManager.cs
 res://entrance/Entrance.cs

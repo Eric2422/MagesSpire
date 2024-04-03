@@ -1,7 +1,7 @@
 using Godot;
 
 public partial class Library : Room {
-    private Door _door;
+    private Door _hallwayDoor;
 
     private Bookshelf[] _bookshelves;
 
@@ -11,7 +11,11 @@ public partial class Library : Room {
     {
         base._Ready();
 
-        _door = GetNode<Door>("Door");
+        GD.Print($"Library Current scene: {GetTree().CurrentScene}");
+
+        _hallwayDoor = GetNode<Door>("HallwayDoor");
+        _hallwayDoor.TargetRoom = "Hallway";
+
         _keyObtained = false;
 
         _bookshelves = new Bookshelf[3];

@@ -12,7 +12,7 @@ public partial class Interactable : Node2D {
 		base._Ready();
 
 		_interactArea = GetNode<Area2D>("Area2D");
-		_player = ((Room) GetParent()).GetNode<Player>("Player");
+		_player = GetParent().GetNode<Player>("Player");
 
 		_playerInInteractArea = false;
 	}
