@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bqirtmam6a81c"]
+
+[node name="Textbox" type="Label"]
+texture_filter = 1
+horizontal_alignment = 1
+vertical_alignment = 1
