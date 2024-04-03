@@ -26,8 +26,6 @@ public partial class Hallway : Room
 			// Assign all the doors to the rooms they lead to 
 			Door door = GetNode<Door>($"{room}Door");
 			door.TargetRoom = room.ToLower();
-
-			EntrancePositions.Add(room, door.Position);
 		}
 	}
 }

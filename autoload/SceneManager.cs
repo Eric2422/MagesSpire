@@ -3,36 +3,50 @@ using System.Collections.Generic;
 
 public partial class SceneManager : Node
 {
+	public Node CurrentScene { get; set; }
+
+	public override void _Ready()
+	{
+		Viewport root = GetTree().Root;
+		CurrentScene = root.GetChild(root.GetChildCount() - 1);
+	}
+
 	/// <summary>
 	/// Changes the scene from the current scene to the next scene.
 	/// Transfers the player from this scene to the next.
 	/// </summary>
-	/// <param name="nextScene">The next scene to be loaded.</param>
-	/// <param name="player">The player Node that is being used in the current scene.</param>
-	public static void ChangeScene(string nextScene, Player player)
+	/// <param name="sceneName">The next scene to be loaded.</param>
+	public void ChangeScene(string sceneName)
 	{
-		// Store the player's current scene.
-		Node currentScene = player.GetParent();
-		currentScene.RemoveChild(player);
+		// Wait until it is safe to change scenes
+		// Otherwise, it may interrupt some code that is still executing
+		CallDeferred(MethodName.DeferredChangeScene, sceneName);
+	}
 
-		// Load the next scene.
-		string scenePath = $"./{nextScene}/{nextScene}.tscn";
-		GD.Print(scenePath);
-		Room newScene = (Room)ResourceLoader.Load<PackedScene>(scenePath).Instantiate();
+	public void DeferredChangeScene(string sceneName) {
+		// Remove the player from the current scene
+		Player player = CurrentScene.GetNode<Player>("Player");
+		CurrentScene.RemoveChild(player);
 
-		newScene.AddChild(player);
-		currentScene.GetTree().Root.AddChild(newScene);
+		// It is now safe to remove the current scene.
+		string oldSceneName = CurrentScene.Name;
+		CurrentScene.Free();
+
+		// Load a new scene.
+		var nextScene = GD.Load<PackedScene>($"res://{sceneName}/{sceneName}.tscn").Instantiate();
+		CurrentScene = nextScene;
+
+		// Add the player to the scene as a child
+		CurrentScene.AddChild(player);
 
 		// Reposition the player to the appropriate door.
-		GD.Print("EntrancePositions:");
-		foreach (string key in newScene.EntrancePositions.Keys) {
-			GD.Print(newScene.EntrancePositions[key]);
-		}
+		player.Position = CurrentScene.GetNode<Node2D>($"{oldSceneName}Door").Position;
 
-		Vector2 position = newScene.EntrancePositions[currentScene.Name];
-		player.Position = position;
+		// Add it to the active scene, as child of root.
+		GetTree().Root.AddChild(CurrentScene);
 
-		// Remove the old scene.
-		currentScene.QueueFree();
+		// Optionally, to make it compatible with the SceneTree.change_scene_to_file() API.
+		GetTree().CurrentScene = CurrentScene;
+
 	}
 }

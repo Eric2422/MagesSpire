@@ -18,8 +18,6 @@ public partial class Library : Room {
 
         for (int i=1; i<=3; i++) {
             _bookshelves[i-1] = GetNode<Bookshelf>($"Bookshelf{i}");
-        }
-
-        
+        }        
     }
 }

@@ -10,7 +10,7 @@ public partial class Door : Interactable
 	{
 		base._Input(@event);
 
-		if (Input.IsActionPressed("ui_interact") && _playerInInteractArea)
+		if (Input.IsActionJustPressed("ui_interact") && _playerInInteractArea)
 		{   
 			_player.EmitSignal(Player.SignalName.EnteredDoor, Name, TargetRoom);
 		}
