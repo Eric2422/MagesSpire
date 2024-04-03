@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="The Mage's Spire"
-run/main_scene="res://scenes/entrance.tscn"
+run/main_scene="res://entrance/entrance.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 
 [autoload]
 
-SceneManager="*res://src/SceneManager.cs"
-Room="*res://src/Room.cs"
+SceneManager="*res://autoload/SceneManager.cs"
+Room="*res://autoload/Room.cs"
 
 [display]
 

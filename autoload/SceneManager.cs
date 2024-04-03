@@ -3,9 +3,6 @@ using System.Collections.Generic;
 
 public partial class SceneManager : Node
 {
-	// The directory where scenes are stored
-	private static string _sceneDirectory = "./scenes/";
-
 	/// <summary>
 	/// Changes the scene from the current scene to the next scene.
 	/// Transfers the player from this scene to the next.
@@ -19,7 +16,8 @@ public partial class SceneManager : Node
 		currentScene.RemoveChild(player);
 
 		// Load the next scene.
-		string scenePath = _sceneDirectory + nextScene + ".tscn";
+		string scenePath = $"./{nextScene}/{nextScene}.tscn";
+		GD.Print(scenePath);
 		Room newScene = (Room)ResourceLoader.Load<PackedScene>(scenePath).Instantiate();
 
 		newScene.AddChild(player);

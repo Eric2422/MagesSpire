@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Godot;
 
 public partial class Player : CharacterBody2D
@@ -6,13 +7,15 @@ public partial class Player : CharacterBody2D
 	// Get the gravity from the project setqtings to be synced with RigidBody nodes.
 	public float Gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 
+	private AnimatedSprite2D playerSprite;
+
 	// The difficulty that the player is playing on
 	public DifficultyMode Difficulty { get; set; }
 
 	private const float Speed = 150.0f;
 	private const float JumpVelocity = -400.0f;
 
-	private AnimatedSprite2D playerSprite;
+	private List<string> _inventory;
 
 	// Responds to the player going through a door. 
 	[Signal]
@@ -65,9 +68,6 @@ public partial class Player : CharacterBody2D
 	// Respond to the player entering a door
 	public void OnEnteredDoor(string doorName, string roomName)
 	{
-		// Change the scene.
-		SceneManager.ChangeScene(roomName, this);
-
 		// Handle special door names
 		switch (doorName)
 		{
@@ -78,6 +78,12 @@ public partial class Player : CharacterBody2D
 			case "HardDoor":
 				Difficulty = DifficultyMode.Hard;
 				break;
+			
+			case "EntranceDoor":
+				return;
 		}
+
+		// Change the scene.
+		SceneManager.ChangeScene(roomName, this);
 	}
 }

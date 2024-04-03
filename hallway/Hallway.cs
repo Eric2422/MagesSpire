@@ -1,6 +1,5 @@
 using Godot;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 
 public partial class Hallway : Room
 {
@@ -12,25 +11,23 @@ public partial class Hallway : Room
 	{
 		base._Ready();
 
-		Player = (Player) FindChild("Player");
+		Player = (Player)FindChild("Player");
 
 		// Both keys are not used yet, so set them to false
 		_keysUsed = new Dictionary<string, bool>();
 		_keysUsed.Add("key1", false);
 		_keysUsed.Add("key2", false);
 
-		// Scenes that the player can enter from.
-		string[] enteringScenes = {"Entrance", "Library", "TorchRoom", "TargetRoom"};
+		// Rooms that the player can enter from.
+		string[] enteringRooms = { "Entrance", "Library", "TorchRoom", "TargetRoom" };
 		// Add each into EntrancePositions
-		foreach (string scene in enteringScenes)
+		foreach (string room in enteringRooms)
 		{
-			Door door = GetNode<Door>($"{scene}Door");
-			EntrancePositions.Add(scene, door.Position);
-		}
-	}
+			// Assign all the doors to the rooms they lead to 
+			Door door = GetNode<Door>($"{room}Door");
+			door.TargetRoom = room.ToLower();
 
-	public override void _Input(InputEvent @event)
-	{
-		
+			EntrancePositions.Add(room, door.Position);
+		}
 	}
 }
