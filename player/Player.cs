@@ -21,11 +21,15 @@ public partial class Player : CharacterBody2D
 	[Signal]
 	public delegate void EnteredDoorEventHandler(string doorName, string roomName);
 
+    [Signal]
+    public delegate void InteractedWithBookshelfEventHandler(string bookshelfName);
+
 	public override void _Ready()
 	{
 		playerSprite = GetNode<AnimatedSprite2D>("PlayerSprite");
 
 		EnteredDoor += OnEnteredDoor;
+        InteractedWithBookshelf += OnInteractedWithBookshelf;
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -65,8 +69,12 @@ public partial class Player : CharacterBody2D
 		MoveAndSlide();
 	}
 
-	// Respond to the player entering a door
-	public void OnEnteredDoor(string doorName, string roomName)
+	/// <summary>
+    /// Respond to the player interacting with a door. 
+    /// </summary>
+    /// <param name="doorName">The name of the door that the player interacted with.</param>
+    /// <param name="roomName">The name of the room that the player is transported to.</param>
+	private void OnEnteredDoor(string doorName, string roomName)
 	{
 		// Handle special door names
 		switch (doorName)
@@ -86,4 +94,15 @@ public partial class Player : CharacterBody2D
 		// Change the scene.
 		SceneManager.ChangeScene(roomName, this);
 	}
+
+    /// <summary>
+    /// Respond to the player interacting with a bookshelf.
+    /// If it is "Bookshelf3", add a key to their inventory.
+    /// </summary>
+    /// <param name="bookshelfName">The name of the bookshelf that the player interacted with</param>
+    private void OnInteractedWithBookshelf(string bookshelfName) {
+        if (bookshelfName == "Bookshelf3") {
+            _inventory.Add("key1");
+        }
+    }
 }

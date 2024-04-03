@@ -7,7 +7,7 @@ public partial class Bookshelf : Interactable {
 
 		if (Input.IsActionPressed("ui_interact") && _playerInInteractArea)
 		{   
-			_player.EmitSignal(Player.SignalName.EnteredDoor, Name);
+			_player.EmitSignal(Player.SignalName.InteractedWithBookshelf, Name);
 		}
 	}
 }
