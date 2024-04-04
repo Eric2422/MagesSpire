@@ -16,8 +16,8 @@ config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 
 [autoload]
 
-SceneManager="*res://autoload/SceneManager.cs"
-Room="*res://autoload/Room.cs"
+SignalsManager="*res://autoload/SignalsManager.cs"
+ScenesManager="*res://autoload/ScenesManager.cs"
 
 [display]
 

@@ -4,108 +4,103 @@ using Godot;
 
 public partial class Player : CharacterBody2D
 {
-	// Get the gravity from the project setqtings to be synced with RigidBody nodes.
-	public float Gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
+    // Get the gravity from the project setqtings to be synced with RigidBody nodes.
+    public float Gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 
-	private AnimatedSprite2D playerSprite;
+    private AnimatedSprite2D playerSprite;
 
-	// The difficulty that the player is playing on
-	public DifficultyMode Difficulty { get; set; }
+    // The difficulty that the player is playing on
+    public DifficultyMode Difficulty { get; set; }
 
-	private const float Speed = 150.0f;
-	private const float JumpVelocity = -400.0f;
+    private const float Speed = 150.0f;
+    private const float JumpVelocity = -400.0f;
 
-	private List<string> _inventory;
+    private List<string> _inventory;
 
-	// Responds to the player going through a door. 
-	[Signal]
-	public delegate void EnteredDoorEventHandler(string doorName, string roomName);
+    
 
-	[Signal]
-	public delegate void InteractedWithBookshelfEventHandler(string bookshelfName);
+    public override void _Ready()
+    {
+        playerSprite = GetNode<AnimatedSprite2D>("PlayerSprite");
 
-	public override void _Ready()
-	{
-		playerSprite = GetNode<AnimatedSprite2D>("PlayerSprite");
+        SignalsManager.EnteredDoor += OnEnteredDoor;
+        SignalsManager.InteractedWithBookshelf += OnInteractedWithBookshelf;
+    }
 
-		EnteredDoor += OnEnteredDoor;
-		InteractedWithBookshelf += OnInteractedWithBookshelf;
+    public override void _PhysicsProcess(double delta)
+    {
+        Vector2 velocity = Velocity;
 
-		
-	}
+        // Add the gravity.
+        if (!IsOnFloor())
+        {
+            velocity.Y += Gravity * (float)delta;
+        }
 
-	public override void _PhysicsProcess(double delta)
-	{
-		Vector2 velocity = Velocity;
+        // Handle Jump.
+        if (Input.IsActionJustPressed("ui_up") && IsOnFloor())
+        {
+            velocity.Y = JumpVelocity;
+        }
 
-		// Add the gravity.
-		if (!IsOnFloor())
-		{
-			velocity.Y += Gravity * (float)delta;
-		}
+        // Get the input direction
+        float direction = Input.GetAxis("ui_left", "ui_right");
 
-		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_up") && IsOnFloor())
-		{
-			velocity.Y = JumpVelocity;
-		}
+        // If either left or right are pressed, accelerate the player.
+        if (direction != 0)
+        {
+            velocity.X = Mathf.MoveToward(Velocity.X, direction * Speed, 8);
 
-		// Get the input direction
-		float direction = Input.GetAxis("ui_left", "ui_right");
+            // Reflect the sprite to face the direction player is moving.
+            playerSprite.FlipH = direction != 1.0f;
+        }
+        // Else, deccelerate the player.
+        else
+        {
+            velocity.X = Mathf.MoveToward(Velocity.X, 0, 8);
+        }
 
-		// If either left or right are pressed, accelerate the player.
-		if (direction != 0)
-		{
-			velocity.X = Mathf.MoveToward(Velocity.X, direction * Speed, 8);
+        Velocity = velocity;
+        MoveAndSlide();
+    }
 
-			// Reflect the sprite to face the direction player is moving.
-			playerSprite.FlipH = direction != 1.0f;
-		}
-		// Else, deccelerate the player.
-		else
-		{
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, 8);
-		}
+    /// <summary>
+    /// Respond to the player interacting with a door. 
+    /// </summary>
+    /// <param name="doorName">The name of the door that the player interacted with.</param>
+    /// <param name="roomName">The name of the room that the player is transported to.</param>
+    private void OnEnteredDoor(string doorName, string roomName)
+    {
+        // Handle special door names
+        switch (doorName)
+        {
+            case "EasyDoor":
+                Difficulty = DifficultyMode.Easy;
+                break;
 
-		Velocity = velocity;
-		MoveAndSlide();
-	}
+            case "HardDoor":
+                Difficulty = DifficultyMode.Hard;
+                break;
 
-	/// <summary>
-	/// Respond to the player interacting with a door. 
-	/// </summary>
-	/// <param name="doorName">The name of the door that the player interacted with.</param>
-	/// <param name="roomName">The name of the room that the player is transported to.</param>
-	private void OnEnteredDoor(string doorName, string roomName)
-	{
-		// Handle special door names
-		switch (doorName)
-		{
-			case "EasyDoor":
-				Difficulty = DifficultyMode.Easy;
-				break;
+            case "EntranceDoor":
+                return;
+        }
 
-			case "HardDoor":
-				Difficulty = DifficultyMode.Hard;
-				break;
-			
-			case "EntranceDoor":
-				return;
-		}
+        // Change the scene.
+        ScenesManager sceneManager = GetNode<ScenesManager>("/root/SceneManager");
+        sceneManager.ChangeScene(roomName);
+    }
 
-		// Change the scene.
-		SceneManager sceneManager = GetNode<SceneManager>("/root/SceneManager");
-		sceneManager.ChangeScene(roomName);
-	}
-
-	/// <summary>
-	/// Respond to the player interacting with a bookshelf.
-	/// If it is "Bookshelf3", add a key to their inventory.
-	/// </summary>
-	/// <param name="bookshelfName">The name of the bookshelf that the player interacted with</param>
-	private void OnInteractedWithBookshelf(string bookshelfName) {
-		if (bookshelfName == "Bookshelf3") {
-			_inventory.Add("key1");
-		}
-	}
+    /// <summary>
+    /// Respond to the player interacting with a bookshelf.
+    /// If it is "Bookshelf3", add a key to their inventory.
+    /// </summary>
+    /// <param name="bookshelfName">The name of the bookshelf that the player interacted with</param>
+    private void OnInteractedWithBookshelf(string bookshelfName)
+    {
+        if (bookshelfName == "Bookshelf3")
+        {
+            _inventory.Add("key1");
+        }
+    }
 }
