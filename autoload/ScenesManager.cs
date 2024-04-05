@@ -25,8 +25,6 @@ public partial class ScenesManager : Node
 
 	public void DeferredChangeScene(string scenePath)
 	{
-		GD.Print($"Changed scene to {scenePath}");
-
 		// Remove the player from the current scene
 		Player player = CurrentScene.GetNode<Player>("Player");
 		CurrentScene.RemoveChild(player);
@@ -50,6 +48,5 @@ public partial class ScenesManager : Node
 
 		// Optionally, to make it compatible with the SceneTree.change_scene_to_file() API.
 		GetTree().CurrentScene = CurrentScene;
-		GD.Print($"Current scene: {GetTree().CurrentScene.Name}");
 	}
 }

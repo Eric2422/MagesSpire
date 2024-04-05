@@ -12,8 +12,6 @@ public partial class Entrance : Room
 	{	
 		base._Ready();
 
-		GD.Print("Entrance ready");
-
 		Player = (Player) GetNode<CharacterBody2D>("Player");
 
 		Door _easyDoor = GetNode<Door>("EasyDoor");

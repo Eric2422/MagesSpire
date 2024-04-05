@@ -13,7 +13,6 @@ public partial class Hallway : Room
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		GD.Print("Hallway _Ready()");
 		base._Ready();
 
 		Player = (Player)FindChild("Player");

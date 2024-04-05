@@ -1,10 +1,4 @@
 res://hallway/hallway.tscn
-res://props/door.tscn
-res://player/player.tscn
-res://props/sign.tscn
-res://textbox.tscn
-res://library/library.tscn
-res://props/bookshelf.tscn
 res://autoload/Global.cs
 res://autoload/Room.cs
 res://autoload/ScenesManager.cs
@@ -13,5 +7,7 @@ res://entrance/Entrance.cs
 res://hallway/Hallway.cs
 res://library/Library.cs
 res://player/Player.cs
+res://props/Bookshelf.cs
 res://props/Door.cs
 res://props/Interactable.cs
+res://library/library.tscn
