@@ -11,3 +11,6 @@ res://props/Bookshelf.cs
 res://props/Door.cs
 res://props/Interactable.cs
 res://library/library.tscn
+res://torch_room/torch_room.tscn
+res://target_room/target_room.tscn
+res://autoload/Room.tscn
