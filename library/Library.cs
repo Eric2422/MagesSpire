@@ -11,10 +11,11 @@ public partial class Library : Room {
     {
         base._Ready();
 
-        GD.Print($"Library Current scene: {GetTree().CurrentScene}");
+        GD.Print("Library _Ready()");
 
         _hallwayDoor = GetNode<Door>("HallwayDoor");
-        _hallwayDoor.TargetRoom = "Hallway";
+
+        _exitDoors.Add(_hallwayDoor, "res://hallway/hallway.tscn");
 
         _keyObtained = false;
 

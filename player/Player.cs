@@ -17,14 +17,9 @@ public partial class Player : CharacterBody2D
 
 	private List<string> _inventory;
 
-	
-
 	public override void _Ready()
 	{
 		playerSprite = GetNode<AnimatedSprite2D>("PlayerSprite");
-
-		SignalsManager.EnteredDoor += OnEnteredDoor;
-		SignalsManager.InteractedWithBookshelf += OnInteractedWithBookshelf;
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -62,33 +57,6 @@ public partial class Player : CharacterBody2D
 
 		Velocity = velocity;
 		MoveAndSlide();
-	}
-
-	/// <summary>
-	/// Respond to the player interacting with a door. 
-	/// </summary>
-	/// <param name="doorName">The name of the door that the player interacted with.</param>
-	/// <param name="roomName">The name of the room that the player is transported to.</param>
-	private void OnEnteredDoor(string doorName, string roomName)
-	{
-		// Handle special door names
-		switch (doorName)
-		{
-			case "EasyDoor":
-				Difficulty = DifficultyMode.Easy;
-				break;
-
-			case "HardDoor":
-				Difficulty = DifficultyMode.Hard;
-				break;
-
-			case "EntranceDoor":
-				return;
-		}
-
-		// Change the scene.
-		ScenesManager sceneManager = GetNode<ScenesManager>("/root/SceneManager");
-		sceneManager.ChangeScene(roomName);
 	}
 
 	/// <summary>

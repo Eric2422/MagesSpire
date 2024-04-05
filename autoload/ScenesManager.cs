@@ -23,8 +23,10 @@ public partial class ScenesManager : Node
 		CallDeferred(MethodName.DeferredChangeScene, sceneName);
 	}
 
-	public void DeferredChangeScene(string sceneName)
+	public void DeferredChangeScene(string scenePath)
 	{
+		GD.Print($"Changed scene to {scenePath}");
+
 		// Remove the player from the current scene
 		Player player = CurrentScene.GetNode<Player>("Player");
 		CurrentScene.RemoveChild(player);
@@ -33,10 +35,8 @@ public partial class ScenesManager : Node
 		string oldSceneName = CurrentScene.Name;
 		CurrentScene.Free();
 
-		GD.Print($"sceneName: {sceneName}");
-
 		// Load a new scene.
-		var nextScene = GD.Load<PackedScene>($"res://{sceneName}/{sceneName}.tscn").Instantiate();
+		var nextScene = GD.Load<PackedScene>(scenePath).Instantiate();
 		CurrentScene = nextScene;
 
 		// Add the player to the scene as a child

@@ -10,7 +10,7 @@ public partial class Bookshelf : Interactable {
 		if (Input.IsActionPressed("ui_interact") && _playerInInteractArea)
 		{   
 			GD.Print("Player interacted with bookshelf");
-			_player.EmitSignal(Player.SignalName.InteractedWithBookshelf, Name);
+			_player.EmitSignal(SignalsManager.SignalName.InteractedWithBookshelf, Name);
 		}
 	}
 }

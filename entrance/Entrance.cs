@@ -1,23 +1,47 @@
+using System.Diagnostics.CodeAnalysis;
 using Godot;
+using Godot.NativeInterop;
 
 public partial class Entrance : Room
-{
+{	
 	private Door _easyDoor;
 	private Door _hardDoor;
-	
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{	
 		base._Ready();
 
+		GD.Print("Entrance ready");
+
 		Player = (Player) GetNode<CharacterBody2D>("Player");
 
-		_easyDoor = GetNode<Door>("EasyDoor");
- 		_easyDoor.TargetRoom = "hallway";
-		GD.Print($"EasyDoor: {_easyDoor}");
+		Door _easyDoor = GetNode<Door>("EasyDoor");
+		Door _hardDoor = GetNode<Door>("HardDoor");
+		_exitDoors.Add(_easyDoor, "res://hallway/hallway.tscn");
+		_exitDoors.Add(_hardDoor, "res://hallway/hallway.tscn");
+	}
 
-		_hardDoor = GetNode<Door>("HardDoor");
-		_hardDoor.TargetRoom = "hallway";
-		GD.Print($"HardDoor: {_hardDoor}");
+	/// <summary>
+	/// Called when the player interacts with a door.
+	/// Transports the user to another scene. 
+	/// </summary>
+	/// <param name="door">The door that the player interacted with</param>
+	protected override void OnEnteredDoor(Door door) {	
+		switch (door) {
+			case var _ when door.Equals(_easyDoor):
+				Player.Difficulty = DifficultyMode.Easy;
+				break;
+			
+			case var _ when door.Equals(_hardDoor):
+				Player.Difficulty = DifficultyMode.Hard;
+				break;
+		}
+
+		// Disconnect the EnteredDoorEventHandler
+		_signalsManager.EnteredDoor -= OnEnteredDoor;
+
+		// Change the scene
+		_scenesManager.ChangeScene(_exitDoors[door]);
 	}
 }
