@@ -38,10 +38,6 @@ public partial class Entrance : Room
 				break;
 		}
 
-		// Disconnect the EnteredDoorEventHandler
-		_signalsManager.EnteredDoor -= OnEnteredDoor;
-
-		// Change the scene
-		_scenesManager.ChangeScene(_exitDoors[door]);
+		base.OnEnteredDoor(door);
 	}
 }

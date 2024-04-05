@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmj3acgrj3rpk"]
+
+[ext_resource type="Texture2D" uid="uid://bormypdide1av" path="res://assets/sign.png" id="1_bth4y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rmtr4"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="Sign" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_bth4y")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = -24.0
+offset_top = -16.0
+offset_right = 24.0
+offset_bottom = 16.0
+label_settings = SubResource("LabelSettings_rmtr4")
+horizontal_alignment = 1
+vertical_alignment = 1

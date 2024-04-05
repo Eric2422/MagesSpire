@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://player/Player.cs" id="4_7edy2"]
 [ext_resource type="Texture2D" uid="uid://53xq06qjndrx" path="res://assets/wall/foreground_tiles.png" id="5_7o6wk"]
 [ext_resource type="PackedScene" uid="uid://bug0kd0k7bbji" path="res://props/door.tscn" id="6_p77rh"]
-[ext_resource type="PackedScene" uid="uid://dpvxl1ohl5j4" path="res://props/wall_sign.tscn" id="7_582nk"]
+[ext_resource type="PackedScene" path="res://props/wall_sign.tscn" id="7_582nk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bqir8"]
 texture = ExtResource("2_hooy1")

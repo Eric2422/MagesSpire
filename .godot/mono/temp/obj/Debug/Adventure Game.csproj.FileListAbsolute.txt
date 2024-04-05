@@ -52,21 +52,21 @@ C:/Users/eric/magesSpire/.godot/mono/temp/obj/Debug/refint/Adventure Game.dll
 C:/Users/eric/magesSpire/.godot/mono/temp/obj/Debug/Adventure Game.pdb
 C:/Users/eric/magesSpire/.godot/mono/temp/obj/Debug/Adventure Game.genruntimeconfig.cache
 C:/Users/eric/magesSpire/.godot/mono/temp/obj/Debug/ref/Adventure Game.dll
-/Users/eric/magesSpire/.godot/mono/temp/obj/Debug/Adventure Game.csproj.AssemblyReference.cache
-/Users/eric/magesSpire/.godot/mono/temp/obj/Debug/Adventure Game.GeneratedMSBuildEditorConfig.editorconfig
-/Users/eric/magesSpire/.godot/mono/temp/obj/Debug/Adventure Game.AssemblyInfoInputs.cache
-/Users/eric/magesSpire/.godot/mono/temp/obj/Debug/Adventure Game.AssemblyInfo.cs
-/Users/eric/magesSpire/.godot/mono/temp/obj/Debug/Adventure Game.csproj.CoreCompileInputs.cache
-/Users/eric/magesSpire/.godot/mono/temp/obj/Debug/Adventure Game.sourcelink.json
-/Users/eric/magesSpire/.godot/mono/temp/obj/Debug/Adventure Game.dll
-/Users/eric/magesSpire/.godot/mono/temp/obj/Debug/refint/Adventure Game.dll
-/Users/eric/magesSpire/.godot/mono/temp/obj/Debug/Adventure Game.pdb
-/Users/eric/magesSpire/.godot/mono/temp/bin/Debug/Adventure Game.deps.json
-/Users/eric/magesSpire/.godot/mono/temp/bin/Debug/Adventure Game.runtimeconfig.json
-/Users/eric/magesSpire/.godot/mono/temp/bin/Debug/Adventure Game.dll
-/Users/eric/magesSpire/.godot/mono/temp/bin/Debug/Adventure Game.pdb
-/Users/eric/magesSpire/.godot/mono/temp/bin/Debug/GodotSharp.dll
-/Users/eric/magesSpire/.godot/mono/temp/bin/Debug/GodotSharpEditor.dll
-/Users/eric/magesSpire/.godot/mono/temp/obj/Debug/Adventur.AFD87AB5.Up2Date
-/Users/eric/magesSpire/.godot/mono/temp/obj/Debug/Adventure Game.genruntimeconfig.cache
-/Users/eric/magesSpire/.godot/mono/temp/obj/Debug/ref/Adventure Game.dll
+C:\Users\eric\magesSpire\.godot\mono\temp\bin\Debug\Adventure Game.deps.json
+C:\Users\eric\magesSpire\.godot\mono\temp\bin\Debug\Adventure Game.runtimeconfig.json
+C:\Users\eric\magesSpire\.godot\mono\temp\bin\Debug\Adventure Game.dll
+C:\Users\eric\magesSpire\.godot\mono\temp\bin\Debug\Adventure Game.pdb
+C:\Users\eric\magesSpire\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\Users\eric\magesSpire\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\Users\eric\magesSpire\.godot\mono\temp\obj\Debug\Adventure Game.csproj.AssemblyReference.cache
+C:\Users\eric\magesSpire\.godot\mono\temp\obj\Debug\Adventure Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eric\magesSpire\.godot\mono\temp\obj\Debug\Adventure Game.AssemblyInfoInputs.cache
+C:\Users\eric\magesSpire\.godot\mono\temp\obj\Debug\Adventure Game.AssemblyInfo.cs
+C:\Users\eric\magesSpire\.godot\mono\temp\obj\Debug\Adventure Game.csproj.CoreCompileInputs.cache
+C:\Users\eric\magesSpire\.godot\mono\temp\obj\Debug\Adventure Game.sourcelink.json
+C:\Users\eric\magesSpire\.godot\mono\temp\obj\Debug\Adventur.AFD87AB5.Up2Date
+C:\Users\eric\magesSpire\.godot\mono\temp\obj\Debug\Adventure Game.dll
+C:\Users\eric\magesSpire\.godot\mono\temp\obj\Debug\refint\Adventure Game.dll
+C:\Users\eric\magesSpire\.godot\mono\temp\obj\Debug\Adventure Game.pdb
+C:\Users\eric\magesSpire\.godot\mono\temp\obj\Debug\Adventure Game.genruntimeconfig.cache
+C:\Users\eric\magesSpire\.godot\mono\temp\obj\Debug\ref\Adventure Game.dll

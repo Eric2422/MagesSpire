@@ -11,9 +11,9 @@ public partial class Room : Node
 	// Stores the Room's doors and the filepath of the scenes they lead to
 	protected Dictionary<Door, string> _exitDoors;
 	
-    public override void _Ready()
-    {
-        base._Ready();
+	public override void _Ready()
+	{
+		base._Ready();
 
 		_signalsManager = GetNode<SignalsManager>("/root/SignalsManager");
 		_scenesManager = GetNode<ScenesManager>("/root/ScenesManager");
@@ -21,14 +21,9 @@ public partial class Room : Node
 		_signalsManager.EnteredDoor += OnEnteredDoor;
 
 		_exitDoors = new Dictionary<Door, string>();
-    }
+	}
 
-    /// <summary>
-    /// Called every frame.
-    /// </summary>
-    /// <param name="delta">The elapsed time since the previous frame.</param>
-    public override void _Process(double delta)
-	{
+	public override void _Input(InputEvent @event) {
 		// If player hits the escape key, quit the game
 		if (Input.IsActionPressed("ui_cancel"))
 		{
@@ -37,9 +32,15 @@ public partial class Room : Node
 	}
 
 	/// <summary>
-	/// An empty method to be overrided. Called when the player interacts with a door. 
+	/// A method to be overrided. Called when the player interacts with a door.
+	/// Disconnects this Room's EnteredDoorEventHandler and changes the scene.
 	/// </summary>
 	/// <param name="door"></param>
 	protected virtual void OnEnteredDoor(Door door) {
+		// Disconnect the EnteredDoorEventHandler
+		_signalsManager.EnteredDoor -= OnEnteredDoor;
+
+		// Change the scene
+		_scenesManager.ChangeScene(_exitDoors[door]);
 	}
 }

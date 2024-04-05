@@ -50,5 +50,6 @@ public partial class ScenesManager : Node
 
 		// Optionally, to make it compatible with the SceneTree.change_scene_to_file() API.
 		GetTree().CurrentScene = CurrentScene;
+		GD.Print($"Current scene: {GetTree().CurrentScene.Name}");
 	}
 }

@@ -42,6 +42,6 @@ public partial class Hallway : Room
 			return;
 		}
 
-		_scenesManager.ChangeScene(_exitDoors[door]);
+		base.OnEnteredDoor(door);
 	}
 }

@@ -25,4 +25,14 @@ public partial class Library : Room {
             _bookshelves[i-1] = GetNode<Bookshelf>($"Bookshelf{i}");
         }        
     }
+
+    /// <summary>
+    /// Transport the player back when they use the HallwayDoor
+    /// </summary>
+    /// <param name="door">The door that the player interacts with.
+    ///                    The only door in this room is the HallwayDoor
+    ///                    </param>
+    protected override void OnEnteredDoor(Door door) {
+        base.OnEnteredDoor(door);
+    }
 }

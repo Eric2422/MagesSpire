@@ -1,7 +1,7 @@
 using Godot;
 
 public partial class Bookshelf : Interactable {
-    public override void _Input(InputEvent @event)
+	public override void _Input(InputEvent @event)
 	{
 		base._Input(@event);
 		
