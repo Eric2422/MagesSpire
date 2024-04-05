@@ -15,8 +15,6 @@ public partial class Hallway : Room
 	{
 		base._Ready();
 
-		Player = (Player)FindChild("Player");
-
 		// Both keys are not used yet, so set them to false
 		_keysUsed = new Dictionary<string, bool>();
 		_keysUsed.Add("key1", false);

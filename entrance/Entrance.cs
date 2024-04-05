@@ -12,8 +12,6 @@ public partial class Entrance : Room
 	{	
 		base._Ready();
 
-		Player = (Player) GetNode<CharacterBody2D>("Player");
-
 		Door _easyDoor = GetNode<Door>("EasyDoor");
 		Door _hardDoor = GetNode<Door>("HardDoor");
 		_exitDoors.Add(_easyDoor, "res://hallway/hallway.tscn");

@@ -1,3 +1,5 @@
-[gd_scene format=3 uid="uid://bd00lb780tsel"]
+[gd_scene load_steps=2 format=3 uid="uid://bsfqo3dmgavtt"]
 
-[node name="TargetRoom" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://p04igw2p0ckp" path="res://autoload/Room.tscn" id="1_ja1x3"]
+
+[node name="TargetRoom" instance=ExtResource("1_ja1x3")]

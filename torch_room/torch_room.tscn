@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://dravhge0y1h2h"]
+[gd_scene load_steps=4 format=3 uid="uid://dq0ook375jabx"]
 
-[node name="TorchRoom" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://p04igw2p0ckp" path="res://autoload/Room.tscn" id="1_ft8md"]
+[ext_resource type="PackedScene" uid="uid://bug0kd0k7bbji" path="res://props/door.tscn" id="2_76m16"]
+[ext_resource type="Script" path="res://torch_room/TorchRoom.cs" id="2_r3v4n"]
+
+[node name="TorchRoom" instance=ExtResource("1_ft8md")]
+script = ExtResource("2_r3v4n")
+
+[node name="HallwayDoor" parent="." index="2" instance=ExtResource("2_76m16")]
+position = Vector2(90, 304)

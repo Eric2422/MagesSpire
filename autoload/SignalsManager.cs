@@ -7,5 +7,5 @@ public partial class SignalsManager : Node {
 	public delegate void EnteredDoorEventHandler(Door door);
 
 	[Signal]
-	public delegate void InteractedWithBookshelfEventHandler(string bookshelfName);
+	public delegate void InteractedWithBookshelfEventHandler(Bookshelf bookshelf);
 }

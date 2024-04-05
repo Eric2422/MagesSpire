@@ -15,11 +15,13 @@ public partial class Player : CharacterBody2D
 	private const float Speed = 150.0f;
 	private const float JumpVelocity = -400.0f;
 
-	private List<string> _inventory;
+	public List<string> Inventory { get; set; }
 
 	public override void _Ready()
 	{
 		playerSprite = GetNode<AnimatedSprite2D>("PlayerSprite");
+
+		Inventory = new List<string>();
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -57,18 +59,5 @@ public partial class Player : CharacterBody2D
 
 		Velocity = velocity;
 		MoveAndSlide();
-	}
-
-	/// <summary>
-	/// Respond to the player interacting with a bookshelf.
-	/// If it is "Bookshelf3", add a key to their inventory.
-	/// </summary>
-	/// <param name="bookshelfName">The name of the bookshelf that the player interacted with</param>
-	private void OnInteractedWithBookshelf(string bookshelfName)
-	{
-		if (bookshelfName == "Bookshelf3")
-		{
-			_inventory.Add("key1");
-		}
 	}
 }

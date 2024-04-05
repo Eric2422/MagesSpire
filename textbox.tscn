@@ -1,6 +1,15 @@
-[gd_scene format=3 uid="uid://bqirtmam6a81c"]
+[gd_scene load_steps=3 format=3 uid="uid://bqirtmam6a81c"]
+
+[sub_resource type="Theme" id="Theme_ygnwx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pi51g"]
+outline_size = 1
 
 [node name="Textbox" type="Label"]
 texture_filter = 1
+offset_right = 248.0
+offset_bottom = 105.0
+theme = SubResource("Theme_ygnwx")
+label_settings = SubResource("LabelSettings_pi51g")
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -14,11 +14,14 @@ public partial class Room : Node
 	public override void _Ready()
 	{
 		base._Ready();
+		
+		
 
 		_signalsManager = GetNode<SignalsManager>("/root/SignalsManager");
 		_scenesManager = GetNode<ScenesManager>("/root/ScenesManager");
 
 		_signalsManager.EnteredDoor += OnEnteredDoor;
+		_signalsManager.InteractedWithBookshelf += OnInteractedWithBookshelf;
 
 		_exitDoors = new Dictionary<Door, string>();
 	}
@@ -42,5 +45,12 @@ public partial class Room : Node
 
 		// Change the scene
 		_scenesManager.ChangeScene(_exitDoors[door]);
+	}
+
+	/// <summary>
+	/// Called when the player interacts with a bookshelf.
+	/// Does nothing.
+	/// </summary>
+	protected virtual void OnInteractedWithBookshelf(Bookshelf bookshelf) {
 	}
 }

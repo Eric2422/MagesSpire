@@ -35,10 +35,12 @@ public partial class ScenesManager : Node
 
 		// Load a new scene.
 		var nextScene = GD.Load<PackedScene>(scenePath).Instantiate();
-		CurrentScene = nextScene;
-
+		
 		// Add the player to the scene as a child
-		CurrentScene.AddChild(player);
+		nextScene.AddChild(player);
+		player.Owner = nextScene;
+		
+		CurrentScene = nextScene;
 
 		// Reposition the player to the appropriate door.
 		player.Position = CurrentScene.GetNode<Node2D>($"{oldSceneName}Door").Position;
