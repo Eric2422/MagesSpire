@@ -1,7 +1,9 @@
-res://autoload/Room.tscn
+res://torch_room/torch_room.tscn
 res://target_room/target_room.tscn
 res://textbox.tscn
-res://torch_room/torch_room.tscn
+res://props/bookshelf.tscn
+res://props/door.tscn
+res://library/library.tscn
 res://autoload/Global.cs
 res://autoload/Room.cs
 res://autoload/ScenesManager.cs
@@ -13,9 +15,5 @@ res://player/Player.cs
 res://props/Bookshelf.cs
 res://props/Door.cs
 res://props/Interactable.cs
-res://props/bookshelf.tscn
-res://README.md
-res://props/door.tscn
-res://library/library.tscn
-res://torch_room/torch_room.gd
+res://target_room/TargetRoom.cs
 res://torch_room/TorchRoom.cs

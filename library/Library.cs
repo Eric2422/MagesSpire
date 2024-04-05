@@ -64,7 +64,12 @@ public partial class Library : Room {
 			// Print a message to the textbox
 			Label label = (Label) textBox.FindChild("Textbox");
 			label.Text = "You found a key in the bookshelf.";
-			this.AddChild(textBox);
+			AddChild(textBox);
+
+			GD.Print("All children of Library scene:");
+			for (int i=0; i<GetChildCount(); i++) {
+				GD.Print(GetChild(i));
+			}
 		}
 	}
 }

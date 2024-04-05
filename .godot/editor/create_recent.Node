@@ -1,6 +1,6 @@
+TileMap
 Label
 RichTextLabel
-TileMap
 Node
 CollisionShape2D
 Area2D
