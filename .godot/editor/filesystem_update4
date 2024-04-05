@@ -14,3 +14,4 @@ res://library/Library.cs
 res://player/Player.cs
 res://props/Door.cs
 res://props/Interactable.cs
+res://autoload/ScenesManager.cs
