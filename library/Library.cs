@@ -22,7 +22,7 @@ public partial class Library : Room {
 		_bookshelves = new Bookshelf[3];
 		for (int i=1; i<=3; i++) {
 			_bookshelves[i-1] = GetNode<Bookshelf>($"Bookshelf{i}");
-		}        
+		}
 	}
 
 	/// <summary>
@@ -48,28 +48,28 @@ public partial class Library : Room {
 		// Get the player
 		Player player = GetChild<Player>(GetChildCount() - 1);
 
-		GD.Print($"Bookshelf: {bookshelf.Name}");
-
 		// If the player interacts with the third bookshelf
-		if (bookshelf.Equals(_bookshelves[2]))
+		if (bookshelf.Equals(_bookshelves[2]) && !_keyObtained)
 		{
+			GD.Print("Player in InteractArea of Bookshelf3: " + _bookshelves[2]);
 			// Add the key to the player's inventory
 			player.Inventory.Add("LibraryKey"); 
 			GD.Print($"Player inventory: {String.Join(", ", player.Inventory)}"); 
-			GD.Print("Key obtained");
+
+			_keyObtained = true;
 
 			// Create a textbox
-			Node textBox =  GD.Load<PackedScene>("res://textbox.tscn").Instantiate();
+			// Node textBox =  GD.Load<PackedScene>("res://textbox.tscn").Instantiate();
 
-			// Print a message to the textbox
-			Label label = (Label) textBox.FindChild("Textbox");
-			label.Text = "You found a key in the bookshelf.";
-			AddChild(textBox);
+			// // Print a message to the textbox
+			// Label label = (Label) textBox.FindChild("Textbox");
+			// label.Text = "You found a key in the bookshelf.";
+			// AddChild(textBox);
 
-			GD.Print("All children of Library scene:");
-			for (int i=0; i<GetChildCount(); i++) {
-				GD.Print(GetChild(i));
-			}
+			// GD.Print("All children of Library scene:");
+			// for (int i=0; i<GetChildCount(); i++) {
+			// 	GD.Print(GetChild(i));
+			// }
 		}
 	}
 }

@@ -15,13 +15,13 @@ public partial class Player : CharacterBody2D
 	private const float Speed = 150.0f;
 	private const float JumpVelocity = -400.0f;
 
-	public List<string> Inventory { get; set; }
+	public List<StringName> Inventory { get; set; }
 
 	public override void _Ready()
 	{
 		playerSprite = GetNode<AnimatedSprite2D>("PlayerSprite");
 
-		Inventory = new List<string>();
+		Inventory = new List<StringName>();
 	}
 
 	public override void _PhysicsProcess(double delta)

@@ -7,6 +7,9 @@ public partial class Bookshelf : Interactable
 		base._Ready();
 
 		_emittedSignal = SignalsManager.SignalName.InteractedWithBookshelf;
+
+		// Prevent misfires during instantiation
+		_playerInInteractArea = false;
 	}
 
 	public override void _Input(InputEvent @event)
