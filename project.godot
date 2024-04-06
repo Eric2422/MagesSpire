@@ -17,17 +17,15 @@ config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 [autoload]
 
 SignalsManager="*res://autoload/SignalsManager.cs"
-ScenesManager="*res://autoload/ScenesManager.cs"
 Global="*res://autoload/Global.cs"
+ScenesManager="*res://autoload/ScenesManager.tscn"
 
 [display]
 
 window/size/viewport_width=640
 window/size/viewport_height=380
-window/size/mode=3
-window/size/resizable=false
+window/size/mode=2
 window/stretch/mode="viewport"
-window/stretch/scale=0.5
 window/stretch/scale_mode="integer"
 
 [dotnet]

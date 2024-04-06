@@ -5,10 +5,20 @@ public partial class ScenesManager : Node
 {
 	public Node CurrentScene { get; set; }
 
+	public HashSet<StringName> _availableScenes;
+
 	public override void _Ready()
 	{
 		Viewport root = GetTree().Root;
 		CurrentScene = root.GetChild(root.GetChildCount() - 1);
+
+		_availableScenes = new();
+		_availableScenes.Add("res://entrance/entrance.tscn");
+		_availableScenes.Add("res://hallway/hallway.tscn");
+		_availableScenes.Add("res://library/library.tscn");
+		_availableScenes.Add("res://torch_room/torch_room.tscn");
+		_availableScenes.Add("res://target_room/target_room.tscn");
+		_availableScenes.Add("res://dummy_room/dummy_room.tscn");
 	}
 
 	/// <summary>
@@ -16,8 +26,13 @@ public partial class ScenesManager : Node
 	/// Transfers the player from this scene to the next.
 	/// </summary>
 	/// <param name="sceneName">The next scene to be loaded.</param>
-	public void ChangeScene(string sceneName)
+	public void ChangeScene(StringName sceneName)
 	{
+		// If the scene cannot be loaded, cancel
+		if (!_availableScenes.Contains(sceneName)) {
+			return;
+		}
+
 		// Wait until it is safe to change scenes
 		// Otherwise, it may interrupt some code that is still executing
 		CallDeferred(MethodName.DeferredChangeScene, sceneName);

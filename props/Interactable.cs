@@ -6,7 +6,7 @@ public partial class Interactable : Node2D {
 	// The name of the signal that the Interactable emits
 	protected StringName _emittedSignal = null;
 
-    protected Area2D _interactArea;
+	protected Area2D _interactArea;
 
 	protected Player _player;
 
@@ -28,8 +28,9 @@ public partial class Interactable : Node2D {
 	{
 		base._Input(@event);
 
-		if (Input.IsActionJustPressed("ui_interact") && _playerInInteractArea)
+		if (Input.IsActionJustPressed("ui_interact") && _interactArea.GetOverlappingBodies().Contains(_player))
 		{
+			GD.Print($"Player is in interact area of {Name}: {_playerInInteractArea}");
 			SignalsManager.EmitSignal(_emittedSignal, this);
 		}
 	}
@@ -40,6 +41,7 @@ public partial class Interactable : Node2D {
 			return; 
 		}
 
+		GD.Print($"Player entered InteractArea of {Name}");
 		_playerInInteractArea = true;
 	}
 
@@ -48,6 +50,7 @@ public partial class Interactable : Node2D {
 			return; 
 		}
 
+		GD.Print($"Player exited InteractArea of {Name}");
 		_playerInInteractArea = false;
 	}
 }
