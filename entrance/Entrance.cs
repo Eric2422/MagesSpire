@@ -7,15 +7,21 @@ public partial class Entrance : Room
 	private Door _easyDoor;
 	private Door _hardDoor;
 
+	private TextBox _textBox; 
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{	
 		base._Ready();
 
-		Door _easyDoor = GetNode<Door>("EasyDoor");
-		Door _hardDoor = GetNode<Door>("HardDoor");
+		_easyDoor = GetNode<Door>("EasyDoor");
+		_hardDoor = GetNode<Door>("HardDoor");
 		_exitDoors.Add(_easyDoor, "res://hallway/hallway.tscn");
 		_exitDoors.Add(_hardDoor, "res://hallway/hallway.tscn");
+
+		// Add text to the text box
+		_textBox = GetNode<TextBox>("TextBox");
+		_textBox.SetLabelText(@"Press WASD to move around. Press E to interact with objects(e.g. doors)");
 	}
 
 	/// <summary>

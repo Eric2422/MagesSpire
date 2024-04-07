@@ -49,10 +49,8 @@ public partial class Library : Room {
 		// If the player interacts with the third bookshelf
 		if (bookshelf.Equals(_bookshelves[2]) && globals.Keys["LibraryKey"] != KeyState.Unobtained)
 		{
-			GD.Print("Player in InteractArea of Bookshelf3: " + _bookshelves[2]);
 			// Add the key to the player's inventory
 			player.Inventory.Add("LibraryKey"); 
-			GD.Print($"Player inventory: {String.Join(", ", player.Inventory)}"); 
 
 			globals.Keys["LibraryKey"] = KeyState.Obtained;
 		}

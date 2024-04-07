@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqirtmam6a81c"]
+[gd_scene load_steps=5 format=3 uid="uid://dhbu27emdncp"]
+
+[ext_resource type="Script" path="res://textbox/TextBox.cs" id="1_s71po"]
 
 [sub_resource type="Theme" id="Theme_frgfw"]
 
@@ -12,6 +14,7 @@ border_width_bottom = 4
 [sub_resource type="LabelSettings" id="LabelSettings_dg778"]
 
 [node name="TextBox" type="CanvasLayer"]
+script = ExtResource("1_s71po")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_direction = 1
