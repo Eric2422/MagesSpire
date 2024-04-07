@@ -1,8 +1,10 @@
+MarginContainer
+CanvasLayer
+Container
+Label
 HBoxContainer
 Panel
-MarginContainer
 TileMap
-Label
 RichTextLabel
 Node
 CollisionShape2D
@@ -10,6 +12,3 @@ Area2D
 Sprite2D
 TextEdit
 AnimatedSprite2D
-CharacterBody2D
-ParallaxBackground
-TextureRect

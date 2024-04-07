@@ -24,13 +24,14 @@ public partial class Entrance : Room
 	/// </summary>
 	/// <param name="door">The door that the player interacted with</param>
 	protected override void OnEnteredDoor(Door door) {	
+		Globals globals = GetNode<Globals>("/root/Globals");
 		switch (door) {
 			case var _ when door.Equals(_easyDoor):
-				Player.Difficulty = DifficultyMode.Easy;
+				globals.Difficulty = DifficultyMode.Easy;
 				break;
 			
 			case var _ when door.Equals(_hardDoor):
-				Player.Difficulty = DifficultyMode.Hard;
+				globals.Difficulty = DifficultyMode.Hard;
 				break;
 		}
 

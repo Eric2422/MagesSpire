@@ -39,6 +39,19 @@ public partial class Hallway : Room
 			return;
 		}
 
+		Globals globals = GetNode<Globals>("/root/Globals");
+		switch (globals.Keys["LibraryKey"]) 
+		{
+			case KeyState.Unobtained:
+				break;
+			
+			case KeyState.Obtained:
+				break;
+			
+			case KeyState.Used:
+				break;
+		}
+
 		base.OnEnteredDoor(door);
 	}
 }

@@ -9,9 +9,6 @@ public partial class Player : CharacterBody2D
 
 	private AnimatedSprite2D playerSprite;
 
-	// The difficulty that the player is playing on
-	public DifficultyMode Difficulty { get; set; }
-
 	private const float Speed = 150.0f;
 	private const float JumpVelocity = -400.0f;
 

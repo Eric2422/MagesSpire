@@ -20,3 +20,8 @@ res://props/Interactable.cs
 res://target_room/TargetRoom.cs
 res://torch_room/TorchRoom.cs
 res://player/player.tscn
+res://entrance/entrance.tscn
+res://global/Globals.cs
+res://global/Room.cs
+res://global/ScenesManager.cs
+res://global/SignalsManager.cs
