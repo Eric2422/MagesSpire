@@ -212,14 +212,14 @@ z_index = -1
 position = Vector2(525, 304)
 
 [node name="HardSign" parent="HardDoor" instance=ExtResource("7_582nk")]
-position = Vector2(-0.739563, -69)
+position = Vector2(-1, -69)
 
 [node name="Hard" type="Label" parent="HardDoor/HardSign"]
 texture_filter = 1
 texture_repeat = 1
-offset_left = -24.0
+offset_left = -23.7396
 offset_top = -16.0
-offset_right = 24.0
+offset_right = 24.2604
 offset_bottom = 16.0
 text = "Hard
 "
@@ -232,7 +232,7 @@ position = Vector2(129, 304)
 scale = Vector2(1.05208, 1)
 
 [node name="EasySign" parent="EasyDoor" instance=ExtResource("7_582nk")]
-position = Vector2(-0.950493, -67)
+position = Vector2(-0.950498, -67)
 
 [node name="Easy" type="Label" parent="EasyDoor/EasySign"]
 texture_filter = 1
