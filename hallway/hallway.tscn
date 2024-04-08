@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmj6mr6fp6a10"]
+[gd_scene load_steps=10 format=3 uid="uid://bmj6mr6fp6a10"]
 
 [ext_resource type="Script" path="res://hallway/Hallway.cs" id="1_al5uj"]
 [ext_resource type="Texture2D" uid="uid://53xq06qjndrx" path="res://assets/wall/foreground_tiles.png" id="2_4434y"]
 [ext_resource type="Texture2D" uid="uid://cpo0ytfqps1cf" path="res://assets/wall/background_tile.png" id="3_hmy1x"]
 [ext_resource type="PackedScene" uid="uid://bug0kd0k7bbji" path="res://props/door.tscn" id="4_b6be6"]
+[ext_resource type="PackedScene" uid="uid://dhbu27emdncp" path="res://textbox/textbox.tscn" id="5_7nxd4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_irfke"]
 texture = ExtResource("2_4434y")
@@ -201,10 +202,15 @@ position = Vector2(147.2, 304)
 [node name="LibraryDoor" parent="." instance=ExtResource("4_b6be6")]
 position = Vector2(262.4, 304)
 
-[node name="TorchRoomDoor" parent="." instance=ExtResource("4_b6be6")]
+[node name="ChestRoomDoor" parent="." instance=ExtResource("4_b6be6")]
 z_index = -1
 position = Vector2(377.6, 304)
 
 [node name="TargetRoomDoor" parent="." instance=ExtResource("4_b6be6")]
 z_index = -1
 position = Vector2(492.8, 304)
+
+[node name="TextBox" parent="." instance=ExtResource("5_7nxd4")]
+visible = false
+offset = Vector2(0, 384)
+transform = Transform2D(1, 0, 0, 1, 0, 384)

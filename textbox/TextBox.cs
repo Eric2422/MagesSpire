@@ -3,18 +3,26 @@ using Godot;
 
 public partial class TextBox : CanvasLayer
 {
-    // The text displayed by the TextBox
-    private Label _label;
+	// The Label Node that contains the text
+	private Label _label;
 
-    public override void _Ready()
-    {
-        base._Ready();
+	private MarginContainer _textBoxContainer;
 
-        _label = (Label) FindChild("Label");
-    }
+	public String Text {
+		get { return _label.Text; }
+		set {
+			_label.Text = value;
+			Visible = !value.Equals("");
+		}
+	}
 
-    public void SetLabelText(String text)
-    {
-        _label.Text = text;
-    }
+	public override void _Ready()
+	{
+		base._Ready();
+
+		_label = (Label) FindChild("Label");
+		
+		// Hide the TextBox by default since it's automatically empty. 
+		Visible = false;
+	}
 }

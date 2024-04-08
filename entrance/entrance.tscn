@@ -196,7 +196,7 @@ layer_0/tile_data = PackedInt32Array(1376256, 1, 1, 1441792, 1, 2, 1376257, 1, 1
 
 [node name="Player" parent="." instance=ExtResource("3_2p0f7")]
 z_as_relative = false
-position = Vector2(110, 318)
+position = Vector2(320, 320)
 script = ExtResource("4_7edy2")
 
 [node name="Foreground" type="TileMap" parent="."]
@@ -211,28 +211,10 @@ layer_0/tile_data = PackedInt32Array(0, 196608, 1, 65536, 196608, 1, 131072, 196
 z_index = -1
 position = Vector2(525, 304)
 
-[node name="Sign" parent="HardDoor" instance=ExtResource("7_582nk")]
-position = Vector2(-150, -66)
+[node name="HardSign" parent="HardDoor" instance=ExtResource("7_582nk")]
+position = Vector2(-0.739563, -69)
 
-[node name="Easy" type="Label" parent="HardDoor/Sign"]
-texture_filter = 1
-texture_repeat = 1
-offset_left = -24.0
-offset_top = -16.0
-offset_right = 24.0
-offset_bottom = 16.0
-text = "Easy"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="EasyDoor" parent="." instance=ExtResource("6_p77rh")]
-z_index = -1
-position = Vector2(375, 304)
-
-[node name="Sign" parent="EasyDoor" instance=ExtResource("7_582nk")]
-position = Vector2(149, -66)
-
-[node name="Hard" type="Label" parent="EasyDoor/Sign"]
+[node name="Hard" type="Label" parent="HardDoor/HardSign"]
 texture_filter = 1
 texture_repeat = 1
 offset_left = -24.0
@@ -244,6 +226,27 @@ text = "Hard
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="EasyDoor" parent="." instance=ExtResource("6_p77rh")]
+z_index = -1
+position = Vector2(129, 304)
+scale = Vector2(1.05208, 1)
+
+[node name="EasySign" parent="EasyDoor" instance=ExtResource("7_582nk")]
+position = Vector2(-0.950493, -67)
+
+[node name="Easy" type="Label" parent="EasyDoor/EasySign"]
+texture_filter = 1
+texture_repeat = 1
+offset_left = -24.0
+offset_top = -16.0
+offset_right = 24.0
+offset_bottom = 16.0
+text = "Easy"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="TextBox" parent="." instance=ExtResource("8_a1p61")]
+visible = false
 offset = Vector2(0, 384)
 transform = Transform2D(1, 0, 0, 1, 0, 384)

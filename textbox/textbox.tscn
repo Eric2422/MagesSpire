@@ -16,25 +16,25 @@ border_width_bottom = 4
 [node name="TextBox" type="CanvasLayer"]
 script = ExtResource("1_s71po")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="TextBoxContainer" type="MarginContainer" parent="."]
 layout_direction = 1
 offset_right = 640.0
 offset_bottom = 96.0
 
-[node name="Panel" type="Panel" parent="MarginContainer"]
+[node name="Panel" type="Panel" parent="TextBoxContainer"]
 z_index = 1
 layout_mode = 2
 theme = SubResource("Theme_frgfw")
 theme_override_styles/panel = SubResource("StyleBoxFlat_u6l2t")
 
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="TextBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="Label" type="Label" parent="MarginContainer/MarginContainer2"]
+[node name="Label" type="Label" parent="TextBoxContainer/MarginContainer2"]
 z_index = 1
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)

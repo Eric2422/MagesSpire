@@ -16,7 +16,7 @@ public partial class ScenesManager : Node
 		_availableScenes.Add("res://entrance/entrance.tscn");
 		_availableScenes.Add("res://hallway/hallway.tscn");
 		_availableScenes.Add("res://library/library.tscn");
-		_availableScenes.Add("res://torch_room/torch_room.tscn");
+		_availableScenes.Add("res://chest_room/chest_room.tscn");
 		_availableScenes.Add("res://target_room/target_room.tscn");
 		_availableScenes.Add("res://dummy_room/dummy_room.tscn");
 	}

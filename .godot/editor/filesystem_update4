@@ -15,3 +15,10 @@ res://props/Interactable.cs
 res://target_room/TargetRoom.cs
 res://textbox/TextBox.cs
 res://torch_room/TorchRoom.cs
+res://hallway/hallway.tscn
+res://library/library.tscn
+res://target_room/target_room.tscn
+res://ChestRoom/torch_room.tscn
+res://chest_room/torch_room.tscn
+res://chest_room/chest_room.tscn
+res://chest_room/ChestRoom.cs

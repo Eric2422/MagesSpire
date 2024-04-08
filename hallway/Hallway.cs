@@ -1,31 +1,32 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
 public partial class Hallway : Room
 {
-	// Stores the keys that the player has to find
-	private Dictionary<string, bool> _keysUsed;
-
 	private Door _entranceDoor;
+
+	// The locked door(i.e. TargetRoom)
+	private Door _lockedDoor;
+
+	private TextBox _textBox;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		base._Ready();
 
-		// Both keys are not used yet, so set them to false
-		_keysUsed = new Dictionary<string, bool>();
-		_keysUsed.Add("key1", false);
-		_keysUsed.Add("key2", false);
-
 		_entranceDoor = GetNode<Door>("EntranceDoor");
+		_lockedDoor = GetNode<Door>("TargetRoomDoor");
 
 		_exitDoors.Add(_entranceDoor, "res://entrance/entrance.tscn");
 		_exitDoors.Add(GetNode<Door>("LibraryDoor"), "res://library/library.tscn");
-		_exitDoors.Add(GetNode<Door>("TorchRoomDoor"), "res://torch_room/torch_room.tscn");
-		_exitDoors.Add(GetNode<Door>("TargetRoomDoor"), "res://target_room/target_room.tscn");
+		_exitDoors.Add(GetNode<Door>("ChestRoomDoor"), "res://chest_room/chest_room.tscn");
+		_exitDoors.Add(_lockedDoor, "res://target_room/target_room.tscn");
+
+		_textBox = GetNode<TextBox>("TextBox");
 	}
 	
 	/// <summary>
@@ -33,25 +34,81 @@ public partial class Hallway : Room
 	/// </summary>
 	/// <param name="door">The door that the player interacts with</param>
 	protected override void OnEnteredDoor(Door door) {
-		// If the door being accessed is the EntranceDoor, do nothing.
-		// The player is not supposed to be able to go back. 
-		if (door.Equals(_entranceDoor)) {
-			return;
-		}
+		switch (door) {
+			// Prevent the player from going back to Entrance
+			case var _ when door.Equals(_entranceDoor):
+				// Print a message to the TextBox
+				_textBox.Text = "The door back to the entrance is blocked.";
+				return;
 
+			case var _ when door.Equals(_lockedDoor):
+				InteractWithLockedDoor();
+				break;
+
+			default:
+				base.OnEnteredDoor(door);
+				break;
+		}
+	}
+
+
+	/// <summary>
+	/// Called when the player tries to interact with the 
+	/// </summary>
+	private void InteractWithLockedDoor() {
 		Globals globals = GetNode<Globals>("/root/Globals");
-		switch (globals.Keys["LibraryKey"]) 
+
+		// Get the player
+		Player player = GetChild<Player>(GetChildCount() - 1);
+
+		switch (globals.Difficulty)
 		{
-			case KeyState.Unobtained:
+			case DifficultyMode.Easy:
+				// If the player has not obtained the library key yet
+				if (globals.Keys["LibraryKey"] == KeyState.Unobtained && player.Inventory.Contains("LibraryKey"))
+				{
+					_textBox.Text = "The door is locked. Search for a key.";
+				}
+
+				// If the player has obtained the key but hasn't used it
+				else if (globals.Keys["LibraryKey"] == KeyState.Obtained && !player.Inventory.Contains("LibraryKey"))
+				{
+					_textBox.Text = "You insert the key and unlock the door.";
+					player.Inventory.Remove("LibraryKey");
+					globals.Keys["LibraryKey"] = KeyState.Used;
+				}
+
+				// If the player has used the key
+				else
+				{
+					base.OnEnteredDoor(_lockedDoor);
+				}
+
 				break;
-			
-			case KeyState.Obtained:
-				break;
-			
-			case KeyState.Used:
+
+			case DifficultyMode.Hard:
+				bool bothKeysUnused = globals.Keys["LibraryKey"] != KeyState.Used && globals.Keys["ChestRoomKey"] != KeyState.Used;
+				bool bothKeysInInventory = player.Inventory.Contains("LibraryKey") && player.Inventory.Contains("ChestRoomKey");
+
+				// If the player is missing at least one key
+				if (bothKeysUnused && !bothKeysInInventory)
+				{
+					_textBox.Text = "The door is locked. Find two keys.";
+				}
+
+				// If the player has both keys
+				else if (bothKeysUnused && bothKeysInInventory) {
+					_textBox.Text = "You insert both keys and unlock the door.";
+					
+				}
+
+				// The player already unlocked the door
+				else
+				{
+					base.OnEnteredDoor(_lockedDoor);
+				}
+
 				break;
 		}
-
-		base.OnEnteredDoor(door);
 	}
 }
