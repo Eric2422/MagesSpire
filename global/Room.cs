@@ -5,25 +5,30 @@ public partial class Room : Node
 {
 	protected SignalsManager _signalsManager;
 	protected ScenesManager _scenesManager;
+    protected Globals _globals;
 
 	public Player Player { get; set; }
 
 	// Stores the Room's doors and the filepath of the scenes they lead to
 	protected Dictionary<Door, string> _exitDoors;
+
+    // The TextBox at the bottom.
+    protected TextBox _textBox;
 	
 	public override void _Ready()
 	{
 		base._Ready();
-		
-		
-
+        _globals = GetNode<Globals>("/root/Globals");
+        
+        // Add the signal handlers
 		_signalsManager = GetNode<SignalsManager>("/root/SignalsManager");
 		_scenesManager = GetNode<ScenesManager>("/root/ScenesManager");
-
 		_signalsManager.EnteredDoor += OnEnteredDoor;
 		_signalsManager.InteractedWithBookshelf += OnInteractedWithBookshelf;
 
 		_exitDoors = new Dictionary<Door, string>();
+
+        _textBox = GetNode<TextBox>("TextBox");
 	}
 
 	public override void _Input(InputEvent @event) {
@@ -53,4 +58,12 @@ public partial class Room : Node
 	/// </summary>
 	protected virtual void OnInteractedWithBookshelf(Bookshelf bookshelf) {
 	}
+
+    /// <summary>
+    /// Returns the player object since it's add after _Ready().
+    /// </summary>
+    /// <returns>The player object</returns>
+    protected Player GetPlayer() {
+        return GetChild<Player>(GetChildCount() - 1);
+    }
 }

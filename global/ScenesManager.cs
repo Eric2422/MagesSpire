@@ -12,13 +12,15 @@ public partial class ScenesManager : Node
 		Viewport root = GetTree().Root;
 		CurrentScene = root.GetChild(root.GetChildCount() - 1);
 
-		_availableScenes = new();
-		_availableScenes.Add("res://entrance/entrance.tscn");
-		_availableScenes.Add("res://hallway/hallway.tscn");
-		_availableScenes.Add("res://library/library.tscn");
-		_availableScenes.Add("res://chest_room/chest_room.tscn");
-		_availableScenes.Add("res://target_room/target_room.tscn");
-		_availableScenes.Add("res://dummy_room/dummy_room.tscn");
+		_availableScenes = new()
+        {
+            "res://entrance/entrance.tscn",
+            "res://hallway/hallway.tscn",
+            "res://library/library.tscn",
+            "res://chest_room/chest_room.tscn",
+            "res://target_room/target_room.tscn",
+            "res://dummy_room/dummy_room.tscn"
+        };
 	}
 
 	/// <summary>

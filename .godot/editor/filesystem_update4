@@ -22,3 +22,5 @@ res://ChestRoom/torch_room.tscn
 res://chest_room/torch_room.tscn
 res://chest_room/chest_room.tscn
 res://chest_room/ChestRoom.cs
+res://global/Globals.tscn
+res://props/chest.tscn

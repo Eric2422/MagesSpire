@@ -7,8 +7,6 @@ public partial class Entrance : Room
 	private Door _easyDoor;
 	private Door _hardDoor;
 
-	private TextBox _textBox; 
-
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{	
@@ -31,14 +29,13 @@ Press E to interact with objects(e.g. doors)";
 	/// </summary>
 	/// <param name="door">The door that the player interacted with</param>
 	protected override void OnEnteredDoor(Door door) {	
-		Globals globals = GetNode<Globals>("/root/Globals");
 		switch (door) {
 			case var _ when door.Equals(_easyDoor):
-				globals.Difficulty = DifficultyMode.Easy;
+				_globals.Difficulty = DifficultyMode.Easy;
 				break;
 			
 			case var _ when door.Equals(_hardDoor):
-				globals.Difficulty = DifficultyMode.Hard;
+				_globals.Difficulty = DifficultyMode.Hard;
 				break;
 		}
 

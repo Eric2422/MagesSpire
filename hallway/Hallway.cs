@@ -11,8 +11,6 @@ public partial class Hallway : Room
 	// The locked door(i.e. TargetRoom)
 	private Door _lockedDoor;
 
-	private TextBox _textBox;
-
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -28,13 +26,15 @@ public partial class Hallway : Room
 
 		_textBox = GetNode<TextBox>("TextBox");
 	}
-	
+
 	/// <summary>
 	/// Called when the player interacts with a door.
 	/// </summary>
 	/// <param name="door">The door that the player interacts with</param>
-	protected override void OnEnteredDoor(Door door) {
-		switch (door) {
+	protected override void OnEnteredDoor(Door door)
+	{
+		switch (door)
+		{
 			// Prevent the player from going back to Entrance
 			case var _ when door.Equals(_entranceDoor):
 				// Print a message to the TextBox
@@ -55,31 +55,30 @@ public partial class Hallway : Room
 	/// <summary>
 	/// Called when the player tries to interact with the 
 	/// </summary>
-	private void InteractWithLockedDoor() {
-		Globals globals = GetNode<Globals>("/root/Globals");
-
+	private void InteractWithLockedDoor()
+	{
 		// Get the player
 		Player player = GetChild<Player>(GetChildCount() - 1);
 
-		switch (globals.Difficulty)
+		switch (_globals.Difficulty)
 		{
 			case DifficultyMode.Easy:
 				// If the player has not obtained the library key yet
-				if (globals.Keys["LibraryKey"] == KeyState.Unobtained && player.Inventory.Contains("LibraryKey"))
+				if (_globals.Keys["LibraryKey"] == KeyState.Unobtained && !player.Inventory.Contains("LibraryKey"))
 				{
 					_textBox.Text = "The door is locked. Search for a key.";
 				}
 
 				// If the player has obtained the key but hasn't used it
-				else if (globals.Keys["LibraryKey"] == KeyState.Obtained && !player.Inventory.Contains("LibraryKey"))
+				else if (_globals.Keys["LibraryKey"] == KeyState.Obtained && player.Inventory.Contains("LibraryKey"))
 				{
 					_textBox.Text = "You insert the key and unlock the door.";
 					player.Inventory.Remove("LibraryKey");
-					globals.Keys["LibraryKey"] = KeyState.Used;
+					_globals.Keys["LibraryKey"] = KeyState.Used;
 				}
 
 				// If the player has used the key
-				else
+				else if (_globals.Keys["LibraryKey"] == KeyState.Used && !player.Inventory.Contains("LibraryKey"))
 				{
 					base.OnEnteredDoor(_lockedDoor);
 				}
@@ -87,7 +86,7 @@ public partial class Hallway : Room
 				break;
 
 			case DifficultyMode.Hard:
-				bool bothKeysUnused = globals.Keys["LibraryKey"] != KeyState.Used && globals.Keys["ChestRoomKey"] != KeyState.Used;
+				bool bothKeysUnused = _globals.Keys["LibraryKey"] != KeyState.Used && _globals.Keys["ChestRoomKey"] != KeyState.Used;
 				bool bothKeysInInventory = player.Inventory.Contains("LibraryKey") && player.Inventory.Contains("ChestRoomKey");
 
 				// If the player is missing at least one key
@@ -97,9 +96,13 @@ public partial class Hallway : Room
 				}
 
 				// If the player has both keys
-				else if (bothKeysUnused && bothKeysInInventory) {
+				else if (bothKeysUnused && bothKeysInInventory)
+				{
 					_textBox.Text = "You insert both keys and unlock the door.";
-					
+					player.Inventory.Remove("LibraryKey");
+					_globals.Keys["LibraryKey"] = KeyState.Used;
+                    player.Inventory.Remove("ChestRoomKey");
+					_globals.Keys["ChestRoomKey"] = KeyState.Used;
 				}
 
 				// The player already unlocked the door

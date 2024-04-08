@@ -8,4 +8,7 @@ public partial class SignalsManager : Node {
 
 	[Signal]
 	public delegate void InteractedWithBookshelfEventHandler(Bookshelf bookshelf);
+
+    [Signal]
+    public delegate void OpenedChestEventHandler();
 }

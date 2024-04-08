@@ -44,18 +44,15 @@ public partial class Library : Room {
 		// Get the player
 		Player player = GetChild<Player>(GetChildCount() - 1);
 
-		Globals globals = GetNode<Globals>("/root/Globals");
-
 		// If the player interacts with the third bookshelf and has not gotten the key already
-		if (bookshelf.Equals(_bookshelves[2]) && globals.Keys["LibraryKey"] == KeyState.Unobtained)
+		if (bookshelf.Equals(_bookshelves[2]) && _globals.Keys["LibraryKey"] == KeyState.Unobtained)
 		{
 			// Add the key to the player's inventory
 			player.Inventory.Add("LibraryKey"); 
-			globals.Keys["InventorKeys"] = KeyState.Obtained;
+			_globals.Keys["LibraryKey"] = KeyState.Obtained;
 
 			// Print a message to the TextBox
-			TextBox textBox = GetNode<TextBox>("TextBox");
-			textBox.Text = "You found a key in the bookshelf.";
+			_textBox.Text = "You found a key in the bookshelf.";
 		}
 	}
 }
