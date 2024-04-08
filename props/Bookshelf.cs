@@ -8,9 +8,4 @@ public partial class Bookshelf : Interactable
 
 		_emittedSignal = SignalsManager.SignalName.InteractedWithBookshelf;
 	}
-
-	public override void _Input(InputEvent @event)
-	{
-		base._Input(@event);
-	}
 }
