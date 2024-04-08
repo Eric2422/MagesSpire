@@ -20,7 +20,7 @@ public partial class Entrance : Room
 		// Add text to the text box
 		_textBox = GetNode<TextBox>("TextBox");
 		_textBox.Text = @"Press WASD to move around. 
-Press E to interact with objects(e.g. doors)";
+Press E to interact with objects(e.g. doors). Press Esc to quit.";
 	}
 
 	/// <summary>

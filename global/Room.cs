@@ -25,6 +25,7 @@ public partial class Room : Node
 		_scenesManager = GetNode<ScenesManager>("/root/ScenesManager");
 		_signalsManager.EnteredDoor += OnEnteredDoor;
 		_signalsManager.InteractedWithBookshelf += OnInteractedWithBookshelf;
+		_signalsManager.OpenedChest += OnOpenedChest;
 
 		_exitDoors = new Dictionary<Door, string>();
 
@@ -58,6 +59,9 @@ public partial class Room : Node
 	/// </summary>
 	protected virtual void OnInteractedWithBookshelf(Bookshelf bookshelf) {
 	}
+
+    protected virtual void OnOpenedChest() {
+    }
 
     /// <summary>
     /// Returns the player object since it's add after _Ready().

@@ -24,3 +24,5 @@ res://chest_room/chest_room.tscn
 res://chest_room/ChestRoom.cs
 res://global/Globals.tscn
 res://props/chest.tscn
+res://props/door.tscn
+res://props/Chest.cs

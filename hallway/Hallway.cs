@@ -101,7 +101,7 @@ public partial class Hallway : Room
 					_textBox.Text = "You insert both keys and unlock the door.";
 					player.Inventory.Remove("LibraryKey");
 					_globals.Keys["LibraryKey"] = KeyState.Used;
-                    player.Inventory.Remove("ChestRoomKey");
+					player.Inventory.Remove("ChestRoomKey");
 					_globals.Keys["ChestRoomKey"] = KeyState.Used;
 				}
 

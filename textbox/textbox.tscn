@@ -27,14 +27,14 @@ layout_mode = 2
 theme = SubResource("Theme_frgfw")
 theme_override_styles/panel = SubResource("StyleBoxFlat_u6l2t")
 
-[node name="MarginContainer2" type="MarginContainer" parent="TextBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TextBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="Label" type="Label" parent="TextBoxContainer/MarginContainer2"]
+[node name="Label" type="Label" parent="TextBoxContainer/MarginContainer"]
 z_index = 1
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
