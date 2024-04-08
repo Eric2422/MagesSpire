@@ -20,3 +20,5 @@ res://props/Door.cs
 res://props/Interactable.cs
 res://recursion_room/RecursionRoom.cs
 res://textbox/TextBox.cs
+res://target_room/TargetRoom.cs
+res://entrance/entrance.tscn
