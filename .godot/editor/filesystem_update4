@@ -1,10 +1,3 @@
-res://textbox/textbox.tscn
-res://chest_room/chest_room.tscn
-res://entrance/entrance.tscn
-res://hallway/hallway.tscn
-res://library/library.tscn
-res://props/chest.tscn
-res://props/door.tscn
 res://chest_room/ChestRoom.cs
 res://entrance/Entrance.cs
 res://global/Globals.cs
@@ -19,3 +12,8 @@ res://props/Chest.cs
 res://props/Door.cs
 res://props/Interactable.cs
 res://textbox/TextBox.cs
+res://recursion_room/recursion_room.tscn
+res://assets/wall/foreground.tres
+res://recursion_room/RecursionRoom.cs
+res://dummy_room/dummy_room.tscn
+res://assets/wall/background.tres

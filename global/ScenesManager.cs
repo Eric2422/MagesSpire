@@ -18,7 +18,7 @@ public partial class ScenesManager : Node
             "res://hallway/hallway.tscn",
             "res://library/library.tscn",
             "res://chest_room/chest_room.tscn",
-            "res://target_room/target_room.tscn",
+            "res://recursion_room/recursion_room.tscn",
             "res://dummy_room/dummy_room.tscn"
         };
 	}

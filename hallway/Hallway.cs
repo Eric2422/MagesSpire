@@ -22,7 +22,7 @@ public partial class Hallway : Room
 		_exitDoors.Add(_entranceDoor, "res://entrance/entrance.tscn");
 		_exitDoors.Add(GetNode<Door>("LibraryDoor"), "res://library/library.tscn");
 		_exitDoors.Add(GetNode<Door>("ChestRoomDoor"), "res://chest_room/chest_room.tscn");
-		_exitDoors.Add(_lockedDoor, "res://target_room/target_room.tscn");
+		_exitDoors.Add(_lockedDoor, "res://recursion_room/recursion_room.tscn");
 
 		_textBox = GetNode<TextBox>("TextBox");
 	}
