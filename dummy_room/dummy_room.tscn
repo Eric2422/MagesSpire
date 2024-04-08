@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://buoanuhg6l53s"]
 
 [ext_resource type="Script" path="res://dummy_room/DummyRoom.cs" id="1_o5apr"]
-[ext_resource type="TileSet" uid="uid://c5bqle0k6y7kw" path="res://assets/wall/foreground.tres" id="2_tk26m"]
-[ext_resource type="TileSet" uid="uid://casf3uoylt4gp" path="res://assets/wall/background.tres" id="3_f1f5h"]
+[ext_resource type="TileSet" uid="uid://b6ku5o5vrwnip" path="res://assets/wall/foreground.tres" id="2_tk26m"]
+[ext_resource type="TileSet" uid="uid://duadivmuorqc0" path="res://assets/wall/background.tres" id="3_f1f5h"]
 [ext_resource type="PackedScene" uid="uid://dhbu27emdncp" path="res://textbox/textbox.tscn" id="3_yslic"]
 [ext_resource type="PackedScene" uid="uid://bug0kd0k7bbji" path="res://props/door.tscn" id="5_xi5qu"]
 

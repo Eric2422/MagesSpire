@@ -9,7 +9,10 @@ public partial class Globals : Node
     public Dictionary<StringName, KeyState> Keys;
 
     // How many times the player opened the chest in ChestRoom
-    public int TimesOpenedChest;
+    public int TimesOpenedChest { get; set; }
+
+    // Whether the player has gone back through the HallwayDoor in RecursionRoom
+    public bool ReturnedInRecursionRoom { get; set; }
 
     public override void _Ready()
     {
@@ -21,5 +24,7 @@ public partial class Globals : Node
         Keys.Add("ChestRoomKey", KeyState.Unobtained);
 
         TimesOpenedChest = 0;
+
+        ReturnedInRecursionRoom = false;
     }
 }

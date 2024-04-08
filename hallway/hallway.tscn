@@ -206,7 +206,7 @@ position = Vector2(262.4, 304)
 z_index = -1
 position = Vector2(377.6, 304)
 
-[node name="TargetRoomDoor" parent="." instance=ExtResource("4_b6be6")]
+[node name="RecursionRoomDoor" parent="." instance=ExtResource("4_b6be6")]
 z_index = -1
 position = Vector2(492.8, 304)
 

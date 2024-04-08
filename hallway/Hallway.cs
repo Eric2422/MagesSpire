@@ -17,7 +17,7 @@ public partial class Hallway : Room
 		base._Ready();
 
 		_entranceDoor = GetNode<Door>("EntranceDoor");
-		_lockedDoor = GetNode<Door>("TargetRoomDoor");
+		_lockedDoor = GetNode<Door>("RecursionRoomDoor");
 
 		_exitDoors.Add(_entranceDoor, "res://entrance/entrance.tscn");
 		_exitDoors.Add(GetNode<Door>("LibraryDoor"), "res://library/library.tscn");

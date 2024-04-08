@@ -17,3 +17,9 @@ res://assets/wall/foreground.tres
 res://recursion_room/RecursionRoom.cs
 res://dummy_room/dummy_room.tscn
 res://assets/wall/background.tres
+res://target_room/target_room.tscn
+res://library/library.tscn
+res://target_room/TargetRoom.cs
+res://dummy_room/DummyRoom.cs
+res://README.md
+res://hallway/hallway.tscn
