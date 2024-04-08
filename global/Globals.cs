@@ -14,6 +14,8 @@ public partial class Globals : Node
     // Whether the player has gone back through the HallwayDoor in RecursionRoom
     public bool ReturnedInRecursionRoom { get; set; }
 
+    public int TimesThroughRecursionRoom { get; set; }
+
     public override void _Ready()
     {
         base._Ready();
