@@ -13,21 +13,22 @@ public partial class ChestRoom : Room {
 	}
 
 	protected override void OnEnteredDoor(Door door) {
-		// Remove the listener for OpenedChest
-		_signalsManager.OpenedChest -= OnOpenedChest;
-
 		base.OnEnteredDoor(door);
 	}
 
 	/// <summary>
 	/// Handles the player opening the chest
 	/// </summary>
-	protected override void OnOpenedChest() {
-		GD.Print($"TimesOpenedChest: {_globals.TimesOpenedChest}");
+	protected override void OnOpenedChest(Chest chest) {
+		if (_globals.Difficulty == DifficultyMode.Easy)
+		{
+			_textBox.Text = "Inside the chest is ... nothing. At least it wasn't a mimic.";
+			return;
+		}
 
 		if (_globals.TimesOpenedChest == 0) {
-			_textBox.Text = @"There is a note in the chest: ""Were you not concerned about this being a mimic?
-Maybe if you come back later, this chest will be replaced by a mimic.""";
+			_textBox.Text = "There is a note in the chest: \"Were you not concerned about this being a mimic? ";
+			_textBox.Text += "Maybe if you come back later, this chest will be replaced by a mimic.\"";
 		}
 
 		else if (_globals.TimesOpenedChest == 1)
@@ -37,14 +38,14 @@ Maybe if you come back later, this chest will be replaced by a mimic.""";
 			GetPlayer().Inventory.Add("ChestRoomKey");
 		}
 
-		else if (_globals.TimesOpenedChest >= 2 && _globals.TimesOpenedChest < 10)
+		else if (_globals.TimesOpenedChest >= 2 && _globals.TimesOpenedChest < 25)
 		{
 			_textBox.Text = $"There is a note in the chest: \"You've already checked this chest {_globals.TimesOpenedChest} times already. There's nothing left in this chest.\"";
 		}
 
 		else 
 		{
-			_textBox.Text = "There is a note in the chest: \"I have to commend you for your perseverance.\"";
+			_textBox.Text = "There is a note in the chest: \"... I have to commend you for your perseverance.\"";
 		}
 		
 		_globals.TimesOpenedChest++;

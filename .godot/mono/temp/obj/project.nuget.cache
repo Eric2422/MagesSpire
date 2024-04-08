@@ -1,15 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "Has/G7P87LsQVWgchiLtmn98b9zouSudQNPuxslzdITbWMY0RGEv0LlLX4deTo7SU2nqdixfTT+0lnglgPn3+Q==",
+  "dgSpecHash": "JjOI3RIoTKJwlp+y0C/HSDMIufSfP51BOVWbDDbxwwzXxyBwGonTje0UJnxi75KgIgJdPc3UMiywxrX7K7BaRw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\eric\\magesSpire\\Adventure Game.csproj",
+  "projectFilePath": "/Users/eric/magesSpire/Adventure Game.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\eric\\.nuget\\packages\\godot.sourcegenerators\\4.2.1\\godot.sourcegenerators.4.2.1.nupkg.sha512",
-    "C:\\Users\\eric\\.nuget\\packages\\godotsharp\\4.2.1\\godotsharp.4.2.1.nupkg.sha512",
-    "C:\\Users\\eric\\.nuget\\packages\\godotsharpeditor\\4.2.1\\godotsharpeditor.4.2.1.nupkg.sha512",
-    "C:\\Users\\eric\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.28\\microsoft.netcore.app.ref.6.0.28.nupkg.sha512",
-    "C:\\Users\\eric\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.28\\microsoft.windowsdesktop.app.ref.6.0.28.nupkg.sha512",
-    "C:\\Users\\eric\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.28\\microsoft.aspnetcore.app.ref.6.0.28.nupkg.sha512"
+    "/Users/eric/.nuget/packages/godot.sourcegenerators/4.2.1/godot.sourcegenerators.4.2.1.nupkg.sha512",
+    "/Users/eric/.nuget/packages/godotsharp/4.2.1/godotsharp.4.2.1.nupkg.sha512",
+    "/Users/eric/.nuget/packages/godotsharpeditor/4.2.1/godotsharpeditor.4.2.1.nupkg.sha512",
+    "/Users/eric/.nuget/packages/microsoft.netcore.app.ref/6.0.27/microsoft.netcore.app.ref.6.0.27.nupkg.sha512",
+    "/Users/eric/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.27/microsoft.aspnetcore.app.ref.6.0.27.nupkg.sha512"
   ],
   "logs": []
 }

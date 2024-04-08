@@ -8,9 +8,4 @@ public partial class Door : Interactable
 
 		_emittedSignal = SignalsManager.SignalName.EnteredDoor;
 	}
-
-	public override void _Input(InputEvent @event)
-	{
-		base._Input(@event);
-	}
 }

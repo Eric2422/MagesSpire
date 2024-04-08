@@ -201,8 +201,8 @@ position = Vector2(90, 304)
 
 [node name="TextBox" parent="." instance=ExtResource("5_lyf72")]
 visible = false
-offset = Vector2(0, 384)
-transform = Transform2D(1, 0, 0, 1, 0, 384)
+offset = Vector2(2.08165e-12, 384)
+transform = Transform2D(1, 0, 0, 1, 2.08165e-12, 384)
 
 [node name="Chest" parent="." instance=ExtResource("6_mqwg4")]
 position = Vector2(383, 336)

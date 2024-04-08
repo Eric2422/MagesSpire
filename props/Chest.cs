@@ -8,9 +8,4 @@ public partial class Chest : Interactable
 
 		_emittedSignal = SignalsManager.SignalName.OpenedChest;
 	}
-
-	public override void _Input(InputEvent @event)
-	{
-		base._Input(@event);
-	}
 }

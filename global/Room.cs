@@ -48,6 +48,8 @@ public partial class Room : Node
 	protected virtual void OnEnteredDoor(Door door) {
 		// Disconnect the EnteredDoorEventHandler
 		_signalsManager.EnteredDoor -= OnEnteredDoor;
+		_signalsManager.InteractedWithBookshelf -= OnInteractedWithBookshelf;
+		_signalsManager.OpenedChest -= OnOpenedChest;
 
 		// Change the scene
 		_scenesManager.ChangeScene(_exitDoors[door]);
@@ -60,7 +62,7 @@ public partial class Room : Node
 	protected virtual void OnInteractedWithBookshelf(Bookshelf bookshelf) {
 	}
 
-    protected virtual void OnOpenedChest() {
+    protected virtual void OnOpenedChest(Chest chest) {
     }
 
     /// <summary>
