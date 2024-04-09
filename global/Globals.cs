@@ -14,6 +14,7 @@ public partial class Globals : Node
     // Whether the player has gone back through the HallwayDoor in RecursionRoom
     public bool ReturnedInRecursionRoom { get; set; }
 
+    // How many times the player tries to progress to the Dummyroom through the Recursionroomn
     public int TimesThroughRecursionRoom { get; set; }
 
     public override void _Ready()
@@ -28,5 +29,6 @@ public partial class Globals : Node
         TimesOpenedChest = 0;
 
         ReturnedInRecursionRoom = false;
+        TimesThroughRecursionRoom = 0;
     }
 }

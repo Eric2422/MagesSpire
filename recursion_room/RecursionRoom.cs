@@ -21,7 +21,13 @@ public partial class RecursionRoom : Room
 	{
 		if (door.Equals(_recursionDoor) && !_globals.ReturnedInRecursionRoom)
 		{
+			if (_globals.TimesThroughRecursionRoom > 0 && _globals.Difficulty == DifficultyMode.Easy)
+			{
+				_textBox.Text = "The room seems rather familiar. Perhaps you should try something else.";
+			}
+
 			GetPlayer().Position = _hallwayDoor.Position;
+			_globals.TimesThroughRecursionRoom++;
 			return;
 		}
 
