@@ -38,7 +38,7 @@ public partial class ChestRoom : Room {
 			GetPlayer().Inventory.Add("ChestRoomKey");
 		}
 
-		else if (_globals.TimesOpenedChest >= 2 && _globals.TimesOpenedChest < 25)
+		else if (_globals.TimesOpenedChest >= 2 && _globals.TimesOpenedChest < 15)
 		{
 			_textBox.Text = $"There is a note in the chest: \"You've already checked this chest {_globals.TimesOpenedChest} times already. There's nothing left in this chest.\"";
 		}
