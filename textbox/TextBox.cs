@@ -8,6 +8,7 @@ public partial class TextBox : CanvasLayer
 
 	private MarginContainer _textBoxContainer;
 
+	[Export]
 	public String Text {
 		get { return _label.Text; }
 		set {

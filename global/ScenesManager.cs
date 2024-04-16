@@ -5,7 +5,7 @@ public partial class ScenesManager : Node
 {
 	public Node CurrentScene { get; set; }
 
-	public HashSet<StringName> _availableScenes;
+	private HashSet<StringName> _availableScenes;
 
 	public override void _Ready()
 	{
